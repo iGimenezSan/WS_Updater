@@ -29,7 +29,6 @@ public class ConsultasBBDD {
             Statement consulta = (Statement) c.createStatement();
             ResultSet consultaProducts = consulta.executeQuery("SELECT products_model FROM products;");
 //            ResultSet consultaRelaciones = consulta.executeQuery("SELECT num_modelo_original FROM relacion_tallas_modelos");
-            
             boolean resultado = false;
             
             while (consultaProducts.next()) {
