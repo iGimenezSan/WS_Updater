@@ -10,6 +10,9 @@ package conversor;
 import com.csvreader.CsvReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
         
 public class Ejecutor {
 
@@ -24,11 +27,15 @@ public class Ejecutor {
     
     public void goes(){
         String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
-        actualizarProductos(ruta);
-        //System.out.println(prueba);
+        try {
+            actualizarProductos(ruta);
+            //System.out.println(prueba);
+        } catch (SQLException ex) {
+            Logger.getLogger(Ejecutor.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public void actualizarProductos (String ruta) {
+    public void actualizarProductos (String ruta) throws SQLException {
         try {
             // Inicializo el ArrayList y el lector de CSV (biblioteca añadida manualmente).
             CsvReader fila_reader = new CsvReader(ruta);
@@ -37,7 +44,7 @@ public class Ejecutor {
             fila_reader.setDelimiter(',');
             int contador = 1;
             // recogida de los datos de cada línea
-            while (fila_reader.readRecord() && (contador < 301)) {
+            while (fila_reader.readRecord()){ //&& (contador < 301)) {
                 String familia = fila_reader.get(0);                            //familia
                 String subfamilia = fila_reader.get(1);                         //subfamilia
                 String codigo = fila_reader.get(2);                             //codigo
@@ -64,9 +71,11 @@ public class Ejecutor {
 //                String[] producto = PRO_LEC.goesArray(familia, subfamilia, codigo, nombre, marca, precio, stock_disponible, talla, iva, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, descripcion_html);
                 System.out.print("linea " + contador + ": ");                
                 // Si el producto existe en la base de datos, se actualiza
-                if (SQL.comprobarExistenciaDelProducto(codigo)) {
+                if ("72300".equals(codigo) || "72301".equals(codigo)) {     //Debug
+                    System.out.print("Detectado Código: " + codigo);        //Debug
+                }                                                           //Debug
+                if (SQL.mirarSiExisteEnTablaProductos(codigo) || SQL.mirarSiExisteEnTablaRelaciones(codigo)) {
                     System.out.println("Se ha encontrado el producto: " + codigo);
-                    
                 } else {
                     System.out.println("No se ha encontrado el producto: " + codigo);
                 }

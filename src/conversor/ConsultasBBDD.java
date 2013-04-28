@@ -21,14 +21,14 @@ public class ConsultasBBDD {
 //        System.out.println("El resultado es: " + prueba);
     }
     
-    public boolean comprobarExistenciaDelProducto(String modeloBuscado) {
+    public boolean mirarSiExisteEnTablaProductos(String modeloBuscado) {
         // Buscar el modelo en cuestión en la tabla producto (productos sin talla)
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
             Statement consulta = (Statement) c.createStatement();
             ResultSet consultaProducts = consulta.executeQuery("SELECT products_model FROM products;");
-//            ResultSet consultaRelaciones = consulta.executeQuery("SELECT num_modelo_original FROM relacion_tallas_modelos");
+
             boolean resultado = false;
             
             while (consultaProducts.next()) {
@@ -37,18 +37,38 @@ public class ConsultasBBDD {
                     resultado = true;
                 }
             }
-//            while (consultaRelaciones.next()) {
-//                String modeloEnBBDD = consultaRelaciones.getString("num_modelo_original");
-//                if (modeloBuscado.equalsIgnoreCase(modeloEnBBDD)) {
-//                    resultado = true;
-//                }
-//            }
+
             return resultado;
         } catch (SQLException ex) {
-            System.out.println("Hubo un error con los comandos SQL");
+            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
             return false;
         } catch (ClassNotFoundException ex2) {
-            System.out.println("No se pudo cargar el driver");
+            System.out.println("No se pudo cargar el driver: " + ex2);
+            return false;
+        }
+    }
+
+    public boolean mirarSiExisteEnTablaRelaciones (String modeloBuscado) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+            Statement consulta = (Statement) c.createStatement();
+            ResultSet consultaRelaciones = consulta.executeQuery("SELECT num_modelo_original FROM relacion_tallas_modelos");
+            
+            boolean resultado = false;
+            
+            while (consultaRelaciones.next()) {
+                String modeloEnBBDD = consultaRelaciones.getString("num_modelo_original");
+                if (modeloBuscado.equalsIgnoreCase(modeloEnBBDD)) {
+                    resultado = true;
+                }
+            }
+            return resultado;
+        } catch (SQLException ex) {
+            System.out.println("Hubo un error con los comandos SQL buscando en relaciones: " + ex);
+            return false;
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
             return false;
         }
     }
