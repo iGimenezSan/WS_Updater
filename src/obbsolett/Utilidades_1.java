@@ -1,6 +1,7 @@
 package obbsolett;
 
 import com.csvreader.CsvReader;
+import conversor.Producto;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
