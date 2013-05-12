@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /** Programa:   ConsultasBBDD.java - (UTF-8)
@@ -18,6 +20,22 @@ public class ConsultasBBDD {
 //        ConsultasBBDD programa = new ConsultasBBDD();
 //    }
     public Procesador PRO = new Procesador();
+    
+    public void meterFilaEnTabla (String[] fila) {
+        
+        String consultaFinal = PRO.crearConsultaInsert(fila);
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+            Statement consulta = (Statement) c.createStatement();
+            consulta.execute(consultaFinal);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public boolean mirarSiExisteEnTablaProductos(String modeloBuscado) {
         // Buscar el modelo en cuestión en la tabla producto (productos sin talla)

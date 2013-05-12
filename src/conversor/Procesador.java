@@ -61,30 +61,53 @@ public class Procesador {
 //        }
 //    }
     
-    public String[] goesArray (String familia, String subfamilia, String codigo, String nombre, String marca, String precio, String stock_disponible, String talla, String iva, String imagen_or, String imagen_grande_1, String imagen_grande_2, String imagen_grande_3, String imagen_grande_4, String imagen_grande_5, String imagen_grande_6, String imagen_grande_7, String imagen_grande_8, String imagen_grande_9, String imagen_grande_10, String descripcion_html)  {
-        String[] array = new String[21];
+    public String[] goesArray (String familia, String subfamilia, String codigo, String nombre, String nombre_original, String marca, String descripcion_castellano, String link, String precio, String precio_tarifa, String stock, String stock_disponible, String reponer, String talla, String iva, String imagen_gr, String imagen_bu, String imagen_or, String imagen_grande_1, String imagen_grande_2, String imagen_grande_3, String imagen_grande_4, String imagen_grande_5, String imagen_grande_6, String imagen_grande_7, String imagen_grande_8, String imagen_grande_9, String imagen_grande_10, String ean, String asociado_talla, String descripcion_html, String tarifa_basica, String tarifa_preferente, String tarifa_profesional, String tarifa_premium)  {
+        String[] array = new String[35];
         array[0] = familia;
         array[1] = subfamilia;
         array[2] = codigo;
         array[3] = nombre;
-        array[4] = marca;
-        array[5] = precio;
-        array[6] = stock_disponible;
-        array[7] = talla;
-        array[8] = iva;
-        array[9] = imagen_or;
-        array[10] = imagen_grande_1;
-        array[11] = imagen_grande_2;
-        array[12] = imagen_grande_3;
-        array[13] = imagen_grande_4;
-        array[14] = imagen_grande_5;
-        array[15] = imagen_grande_6;
-        array[16] = imagen_grande_7;
-        array[17] = imagen_grande_8;
-        array[18] = imagen_grande_9;
-        array[19] = imagen_grande_10;
-        array[20] = descripcion_html;
+        array[4] = nombre_original;
+        array[5] = marca;
+        array[6] = descripcion_castellano;
+        array[7] = link;
+        array[8] = precio;
+        array[9] = precio_tarifa;
+        array[10] = stock;
+        array[11] = stock_disponible;
+        array[12] = reponer;
+        array[13] = talla;
+        array[14] = iva;
+        array[15] = imagen_gr;
+        array[16] = imagen_bu;
+        array[17] = imagen_or;
+        array[18] = imagen_grande_1;
+        array[19] = imagen_grande_2;
+        array[20] = imagen_grande_3;
+        array[21] = imagen_grande_4;
+        array[22] = imagen_grande_5;
+        array[23] = imagen_grande_6;
+        array[24] = imagen_grande_7;
+        array[25] = imagen_grande_8;
+        array[26] = imagen_grande_9;
+        array[27] = imagen_grande_10;
+        array[28] = ean;
+        array[29] = asociado_talla;
+        array[30] = descripcion_html;
+        array[31] = tarifa_basica;
+        array[32] = tarifa_preferente;
+        array[33] = tarifa_profesional;
+        array[34] = tarifa_premium;
         return array;
+    }
+    
+    public String crearConsultaInsert(String[] fila) {
+        String campos = "familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium";
+        
+        
+        String valores = "'" + fila[0] + "','" + fila[1] + "','" + fila[2] + "','" + fila[3] + "','" + fila[4] + "','" + fila[5] + "','" + fila[6] + "','" + fila[7] + "','" + fila[8] + "','" + fila[9] + "','" + fila[10] + "','" + fila[11] + "','" + fila[12] + "','" + fila[13] + "','" + fila[14] + "','" + fila[15] + "','" + fila[16] + "','" + fila[17] + "','" + fila[18] + "','" + fila[19] + "','" + fila[20] + "','" + fila[21] + "','" + fila[22] + "','" + fila[23] + "','" + fila[24] + "','" + fila[25] + "','" + fila[26] + "','" + fila[27] + "','" + fila[28] + "','" + fila[29] + "','" + fila[30] + "','" + fila[31] + "','" + fila[32] + "','" + fila[33] + "','" + fila[34] + "'";
+        String consultaCreada = "INSERT INTO archivo_csv_parseado (" + campos + ") VALUES (" + valores + ")";
+        return consultaCreada;
     }
     
     public boolean trueSiTieneTalla (String dato) {
