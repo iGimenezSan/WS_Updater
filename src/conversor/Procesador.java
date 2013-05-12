@@ -168,8 +168,9 @@ public class Procesador {
         return marcaSalida;
     }
     
-    private String cambiarFormato_Precio(String precioOrigen) {
+    public String cambiarFormato_Precio(String precioOrigen) {
         String precioSalida = ortografia_SustituirSeparadorDecimales(precioOrigen);
+        precioSalida = precioSalida + "00";
         return precioSalida;
     }    
     

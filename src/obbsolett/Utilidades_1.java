@@ -1,4 +1,4 @@
-package conversor;
+package obbsolett;
 
 import com.csvreader.CsvReader;
 import java.io.FileNotFoundException;

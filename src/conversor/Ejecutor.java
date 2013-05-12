@@ -16,7 +16,7 @@ import java.util.logging.Logger;
         
 public class Ejecutor {
 
-   private Procesador PRO_LEC = new Procesador();
+   
    private Salida OUT = new Salida();
    private ConsultasBBDD SQL = new ConsultasBBDD();
     
@@ -29,7 +29,6 @@ public class Ejecutor {
         String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
         try {
             actualizarProductos(ruta);
-            //System.out.println(prueba);
         } catch (SQLException ex) {
             Logger.getLogger(Ejecutor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -42,9 +41,11 @@ public class Ejecutor {
             
             //Especificación del separador
             fila_reader.setDelimiter(',');
-            int contador = 1;
+
+//            int contador = 1;
+
             // recogida de los datos de cada línea
-            while (fila_reader.readRecord()){ //&& (contador < 301)) {
+            while (fila_reader.readRecord()) { // && (contador < 301)) {
                 String familia = fila_reader.get(0);                            //familia
                 String subfamilia = fila_reader.get(1);                         //subfamilia
                 String codigo = fila_reader.get(2);                             //codigo
@@ -67,32 +68,20 @@ public class Ejecutor {
                 String imagen_grande_10 = fila_reader.get(27);                  //imagen_grande_10
                 String descripcion_html = fila_reader.get(30);                  //descripcion_html
                 
-                // Rellenar un array con el contenido de las variables para facilitar el trabajo.
-//                String[] producto = PRO_LEC.goesArray(familia, subfamilia, codigo, nombre, marca, precio, stock_disponible, talla, iva, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, descripcion_html);
-                System.out.print("linea " + contador + ": ");                
-                // Si el producto existe en la base de datos, se actualiza
-                if ("72300".equals(codigo) || "72301".equals(codigo)) {     //Debug
-                    System.out.print("Detectado Código: " + codigo);        //Debug
-                }                                                           //Debug
+//                System.out.print("linea " + contador + ": ");                
+
                 if (SQL.mirarSiExisteEnTablaProductos(codigo) || SQL.mirarSiExisteEnTablaRelaciones(codigo)) {
-                    System.out.println("Se ha encontrado el producto: " + codigo);
+// Deberia haber diferencia por tallas??????
+                    String idProducto = SQL.obtenerIdProducto(codigo);
+                    SQL.actualizarProductoAntiguo(idProducto, precio, stock_disponible);
                 } else {
-                    System.out.println("No se ha encontrado el producto: " + codigo);
+//                    System.out.println("No se ha encontrado el producto: " + codigo);
                 }
                 
-
-//                if (!PRO_LEC.trueSiTieneTalla("hola")) {
-//                    String[] productoSinTallaCamposProcesados = PRO_LEC.procesoSimple(producto);
-//                } else {
-//                    String[] productoConTallaCamposProcesados = PRO_LEC.procesoSimple(producto);
-//                    String[] productoConTallaTallasProcesadas = PRO_LEC.procesoComplejo(producto);
-//                }
-                contador++;
+//                contador++;
             }
             fila_reader.close();
             
-        // Nunca he hecho un tratamiento de excepciones ni he estudiado como hacerlos, 
-        //  asi que a esto casi que ni caso, está hecho por deducción ;)
         } catch (FileNotFoundException e) {
             System.out.println("Parece que no se encuentra el fichero.");
         } catch (IOException e) {

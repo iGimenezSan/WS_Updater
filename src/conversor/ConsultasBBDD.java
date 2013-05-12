@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 /** Programa:   ConsultasBBDD.java - (UTF-8)
   * Autor:      McKyavelik
   * 
@@ -13,13 +14,10 @@ import java.sql.Statement;
 
 public class ConsultasBBDD {
 
-    public static void main (String[] args) {
-        ConsultasBBDD programa = new ConsultasBBDD();
-//        programa.consulta_selectCatalogws();
-//        programa.consulta_InsertCatalogws();
-//        boolean prueba = programa.comprobarExistenciaDelProducto("19999");
-//        System.out.println("El resultado es: " + prueba);
-    }
+//    public static void main (String[] args) {
+//        ConsultasBBDD programa = new ConsultasBBDD();
+//    }
+    public Procesador PRO = new Procesador();
     
     public boolean mirarSiExisteEnTablaProductos(String modeloBuscado) {
         // Buscar el modelo en cuestión en la tabla producto (productos sin talla)
@@ -72,42 +70,57 @@ public class ConsultasBBDD {
             return false;
         }
     }
-    
-    public void consulta_selectCatalogws() {
+
+    String obtenerIdProducto(String codigoProducto) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
-            Statement consulta = (Statement) c.createStatement();
-            ResultSet resultado = consulta.executeQuery("SELECT * FROM tags");
-        
-            int columna_tag_id = resultado.findColumn("tag_id");
-            int columna_tag_text = resultado.findColumn("tag_text");
-            boolean quedanRegistros = resultado.next();
-            
-            while (quedanRegistros) {
-
-                quedanRegistros = resultado.next(); //se verifica si hay otro registro
+            Statement consultador = (Statement) c.createStatement();
+            ResultSet resultadoConsulta = consultador.executeQuery("SELECT products_id FROM products WHERE products_model LIKE '" + codigoProducto + "'");
+            String resultado = "";
+            while (resultadoConsulta.next()) {
+                resultado = resultadoConsulta.getString("products_id");
             }
+            return resultado;
         } catch (SQLException ex) {
-            System.out.println("Hubo un error con los comandos SQL");
-        } catch (ClassNotFoundException ex2){
-            System.out.println("No se pudo cargar el driver");
+            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + codigoProducto + " // " + ex);
+            return "";
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+            return "";
         }
     }
-    
-    public void consulta_InsertCatalogws(){
+
+    public void actualizarProductoAntiguo(String idProducto, String precio, String stock_disponible) {
+        actualizarPrecio(idProducto, precio);
+        actualizarStock(idProducto, stock_disponible);
+    }
+
+    private void actualizarPrecio(String idProducto, String precio) {
+        
+        precio = PRO.cambiarFormato_Precio(precio);
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
-            Statement consulta = (Statement) c.createStatement();
-            int resultado = consulta.executeUpdate("INSERT INTO tags (tag_id, tag_text) VALUES (19, 'Flautas')");
-        
+            Statement consultador = (Statement) c.createStatement();
+            consultador.executeUpdate("UPDATE products SET products_price = " + precio + " WHERE products_id LIKE '" + idProducto + "'");
         } catch (SQLException ex) {
-            System.out.println("Hubo un error con los comandos SQL");
-        
-        } catch (ClassNotFoundException ex2){
-            System.out.println("No se pudo cargar el driver");
+            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
         }
-    }    
-    
+    }
+
+    private void actualizarStock(String idProducto, String stock_disponible) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+            Statement consultador = (Statement) c.createStatement();
+            consultador.executeUpdate("UPDATE products SET products_quantity = " + stock_disponible + " WHERE products_id LIKE '" + idProducto + "'");
+        } catch (SQLException ex) {
+            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+        }
+    }
 }
