@@ -31,7 +31,7 @@ public class Ejecutor {
             CsvReader lector = new CsvReader(ruta);
             
             //Especificación del separador
-            lector.setDelimiter(',');
+            lector.setDelimiter(';');
 
             // recogida de los datos de cada línea
             while (lector.readRecord()) {
@@ -70,7 +70,7 @@ public class Ejecutor {
                 String tarifa_preferente = lector.get(32);                  //tarifa_preferente
                 String tarifa_profesional = lector.get(33);                 //tarifa_profesional
                 String tarifa_premium = lector.get(34);                     //tarifa_premium
-                
+
                 String[] arrayFila = PRO.goesArray(familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium);
                 SQL.meterFilaEnTabla(arrayFila);
                 
