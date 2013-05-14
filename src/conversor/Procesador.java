@@ -1,66 +1,79 @@
 package conversor;
 
+import com.csvreader.CsvReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /* 
  * @autor Isaac Giménez Sánchez
  */
 
 public class Procesador {
-
-//    public ArrayList<Producto> listaProductosConTalla (String ruta) {
-//        try {
-//            // Inicializo el ArrayList y el lector de CSV (biblioteca añadida manualmente).
-//            ArrayList producto = new ArrayList();
-//            CsvReader fila_reader = new CsvReader(ruta);
-//            
-//            //Especificación del separador
-//            fila_reader.setDelimiter(',');
-//
-//            // recogida de los datos de cada línea
-//            while (fila_reader.readRecord()) {
-//                String familia = fila_reader.get(0);                            //familia
-//                String subfamilia = fila_reader.get(1);                         //subfamilia
-//                String codigo = fila_reader.get(2);                             //codigo
-//                String nombre = fila_reader.get(3);                             //nombre
-//                String marca = fila_reader.get(5);                              //marca
-//                String precio = fila_reader.get(8);                             //precio
-//                String stock_disponible = fila_reader.get(11);                  //stock_disponible
-//                String talla = fila_reader.get(13);                             //talla    
-//                String iva = fila_reader.get(14);                               //iva
-//                String imagen_or = fila_reader.get(17);                         //imagen_or
-//                String imagen_grande_1 = fila_reader.get(18);                   //imagen_grande_1
-//                String imagen_grande_2 = fila_reader.get(19);                   //imagen_grande_2
-//                String imagen_grande_3 = fila_reader.get(20);                   //imagen_grande_3
-//                String imagen_grande_4 = fila_reader.get(21);                   //imagen_grande_4
-//                String imagen_grande_5 = fila_reader.get(22);                   //imagen_grande_5
-//                String imagen_grande_6 = fila_reader.get(23);                   //imagen_grande_6
-//                String imagen_grande_7 = fila_reader.get(24);                   //imagen_grande_7
-//                String imagen_grande_8 = fila_reader.get(25);                   //imagen_grande_8
-//                String imagen_grande_9 = fila_reader.get(26);                   //imagen_grande_9
-//                String imagen_grande_10 = fila_reader.get(27);                  //imagen_grande_10
-//                String descripcion_html = fila_reader.get(30);                  //descripcion_html
-//                
-//                // Añadir el producto recibido (a dónde? no lo se... per add es añadir, no? XD)
-//                //producto.add(new Producto(familia,subfamilia,codigo,nombre,marca,precio,stock_disponible,talla,iva,imagen_or,imagen_grande_1,imagen_grande_2,imagen_grande_3,imagen_grande_4,imagen_grande_5,imagen_grande_6,imagen_grande_7,imagen_grande_8,imagen_grande_9,imagen_grande_10,descripcion_html));
-//                producto.add(new Producto(familia, subfamilia, codigo, nombre, marca, precio, stock_disponible, talla, iva, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, descripcion_html));
-//                
-//            }
-//            fila_reader.close();
-//            return producto;
-//            
-//        // Nunca he hecho un tratamiento de excepciones ni he estudiado como hacerlos, 
-//        //  asi que a esto casi que ni caso, está hecho por deducción ;)
-//        } catch (FileNotFoundException e) {
-//            System.out.println("Parece que no se encuentra el fichero.");
-//            ArrayList<Producto> filas = null;
-//            return filas;
-//        } catch (IOException e) {
-//            System.out.println("Fallo desconocido en entrada/salida.");
-//            System.out.println("Tendrá algo que ver esto?: " + e);
-//            ArrayList<Producto> filas = null;
-//            return filas;
-//        }
-//    }
     
+    private ConsultasBBDD SQL = new ConsultasBBDD();
+    
+    /* 
+     * Lee el fichero CSV y almacena los datos en "catalogWS.archivo_csv_parseado".
+     */
+    public void parsearFicheroHaciaBD (String ruta) {
+        try {
+            CsvReader lector = new CsvReader(ruta);
+            
+            //Especificación del separador
+            lector.setDelimiter(';');
+
+            // recogida de los datos de cada línea
+            while (lector.readRecord()) {
+                String familia = lector.get(0);                             //familia
+                String subfamilia = lector.get(1);                          //subfamilia
+                String codigo = lector.get(2);                              //codigo
+                String nombre = lector.get(3);                              //nombre
+                String nombre_original = lector.get(4);                     //nombre_original
+                String marca = lector.get(5);                               //marca
+                String descripcion_castellano = lector.get(6);              //descripcion_castellano
+                String link = lector.get(7);                                //link
+                String precio = lector.get(8);                              //precio
+                String precio_tarifa = lector.get(9);                       //precio_tarifa
+                String stock = lector.get(10);                              //stock
+                String stock_disponible = lector.get(11);                   //stock_disponible
+                String reponer = lector.get(12);                            //reponer
+                String talla = lector.get(13);                              //talla    
+                String iva = lector.get(14);                                //iva
+                String imagen_gr = lector.get(15);                          //imagen_gr
+                String imagen_bu = lector.get(16);                          //imagen_bu
+                String imagen_or = lector.get(17);                          //imagen_or
+                String imagen_grande_1 = lector.get(18);                    //imagen_grande_1
+                String imagen_grande_2 = lector.get(19);                    //imagen_grande_2
+                String imagen_grande_3 = lector.get(20);                    //imagen_grande_3
+                String imagen_grande_4 = lector.get(21);                    //imagen_grande_4
+                String imagen_grande_5 = lector.get(22);                    //imagen_grande_5
+                String imagen_grande_6 = lector.get(23);                    //imagen_grande_6
+                String imagen_grande_7 = lector.get(24);                    //imagen_grande_7
+                String imagen_grande_8 = lector.get(25);                    //imagen_grande_8
+                String imagen_grande_9 = lector.get(26);                    //imagen_grande_9
+                String imagen_grande_10 = lector.get(27);                   //imagen_grande_10
+                String ean = lector.get(28);                                //ean
+                String asociado_talla = lector.get(29);                     //asociado_talla
+                String descripcion_html = lector.get(30);                   //descripcion_html
+                String tarifa_basica = lector.get(31);                      //tarifa_basica
+                String tarifa_preferente = lector.get(32);                  //tarifa_preferente
+                String tarifa_profesional = lector.get(33);                 //tarifa_profesional
+                String tarifa_premium = lector.get(34);                     //tarifa_premium
+
+                String[] arrayFila = goesArray(familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium);
+                SQL.meterFilaEnTabla(arrayFila);
+            }
+            lector.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Parece que no se encuentra el fichero.");
+        } catch (IOException e) {
+            System.out.println("Fallo desconocido en entrada/salida.");
+        }
+    }        
+    
+    /* 
+     * Recoge todas las variables del fichero CSV de entrada en un Array.
+     */
     public String[] goesArray (String familia, String subfamilia, String codigo, String nombre, String nombre_original, String marca, String descripcion_castellano, String link, String precio, String precio_tarifa, String stock, String stock_disponible, String reponer, String talla, String iva, String imagen_gr, String imagen_bu, String imagen_or, String imagen_grande_1, String imagen_grande_2, String imagen_grande_3, String imagen_grande_4, String imagen_grande_5, String imagen_grande_6, String imagen_grande_7, String imagen_grande_8, String imagen_grande_9, String imagen_grande_10, String ean, String asociado_talla, String descripcion_html, String tarifa_basica, String tarifa_preferente, String tarifa_profesional, String tarifa_premium)  {
         String[] array = new String[35];
         array[0] = familia;
@@ -101,6 +114,9 @@ public class Procesador {
         return array;
     }
     
+    /*
+     * Genera la cadena de texto con la consulta INSERT para cada fila del CSV.
+     */
     public String crearConsultaInsert(String[] fila) {
         String campos = "familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium";
         
@@ -109,6 +125,15 @@ public class Procesador {
         String consultaCreada = "INSERT INTO archivo_csv_parseado (" + campos + ") VALUES (" + valores + ")";
         return consultaCreada;
     }
+    
+    
+    
+    
+    ////////////////////////////////////
+    //////                      ////////
+    //////      OLD             ////////
+    //////                      ////////
+    ////////////////////////////////////
     
     public boolean trueSiTieneTalla (String dato) {
         String sinTalla = "ST", Unica = "U", unicaPlus = "UP";
@@ -169,12 +194,6 @@ public class Procesador {
         producto[20] = cambiarFormato_DescripcionHTML(producto[20]);
         return producto;
     }
-
-//    public String[] procesoComplejo(String[] producto) {
-//        String[] productoFormatoProcesado = procesoSimple(producto);
-//        fabricarDato_CodificarTallas(productoFormatoProcesado);
-//        return producto;
-//    }
 
     private String cambiarFormato_Subfamilia(String subfamiliaOrigen) {
         String subfamiliaSalida = ortografia_SustituirEñes(subfamiliaOrigen);

@@ -16,11 +16,18 @@ import java.util.logging.Logger;
 
 public class ConsultasBBDD {
 
+//    /*
+//     * Bloque main extra para pruebas de conexión con la base de datos.
+//     */
 //    public static void main (String[] args) {
 //        ConsultasBBDD programa = new ConsultasBBDD();
 //    }
+    
     public Procesador PRO = new Procesador();
     
+    /*
+     * Genera la sentencia INSERT para cada fila del CSV y la ejecuta
+     */
     public void meterFilaEnTabla (String[] fila) {
         
         String consultaFinal = PRO.crearConsultaInsert(fila);
@@ -36,6 +43,15 @@ public class ConsultasBBDD {
             Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    
+    
+    ////////////////////////////////////
+    //////                      ////////
+    //////      OLD             ////////
+    //////                      ////////
+    ////////////////////////////////////
     
     public boolean mirarSiExisteEnTablaProductos(String modeloBuscado) {
         // Buscar el modelo en cuestión en la tabla producto (productos sin talla)
