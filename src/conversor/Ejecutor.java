@@ -10,6 +10,7 @@ package conversor;
 public class Ejecutor {
 
    private Procesador PRO = new Procesador();
+   private ConsultasBBDD SQL = new ConsultasBBDD();
     
     public static void main (String[] Args) {
         Ejecutor programa = new Ejecutor();
@@ -17,7 +18,9 @@ public class Ejecutor {
     }
     
     public void goes(){
-        String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
-            PRO.parsearFicheroHaciaBD(ruta);
+//        String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
+//        PRO.parsearFicheroHaciaBD(ruta);
+        
+        SQL.generarResulset();
     }
 }

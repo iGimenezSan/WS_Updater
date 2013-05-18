@@ -157,4 +157,18 @@ public class ConsultasBBDD {
             System.out.println("No se pudo cargar el driver: " + ex2);
         }
     }
+
+    void generarResulset() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+            Statement consultador = (Statement) c.createStatement();
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+        }
+    }
 }
