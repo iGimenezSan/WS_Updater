@@ -1,6 +1,9 @@
 package conversor;
 
 import com.mysql.jdbc.Connection;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,15 +18,25 @@ import java.util.logging.Logger;
 **/
 
 public class ConsultasBBDD {
+    
+        // JDBC driver name and database URL
+        static String driverName = "com.mysql.jdbc.Driver";
+        static String url = "jdbc:mysql://localhost:3306/";
+
+        // defined and set value in  dbName, userName and password variables
+        static String dbName = "catalogws";
+        static String userName = "tester";
+        static String password = "tester"; 
 
 //    /*
 //     * Bloque main extra para pruebas de conexión con la base de datos.
 //     */
 //    public static void main (String[] args) {
 //        ConsultasBBDD programa = new ConsultasBBDD();
+//        programa.
 //    }
     
-    public Procesador PRO = new Procesador();
+    private Procesador PRO = new Procesador();
     
     /*
      * Genera la sentencia INSERT para cada fila del CSV y la ejecuta
@@ -33,8 +46,8 @@ public class ConsultasBBDD {
         String consultaFinal = PRO.crearConsultaInsert(fila);
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+            Class.forName(driverName);
+            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
             Statement consulta = (Statement) c.createStatement();
             consulta.execute(consultaFinal);
         } catch (SQLException ex) {
@@ -44,7 +57,29 @@ public class ConsultasBBDD {
         }
     }
     
-    
+    /*
+     * Obtinene un INT con la longitud del listado.
+     */
+    public int obtenerLongitudListado () {
+        int longitud = 0;
+        try {
+            Class.forName(driverName);
+            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
+            Statement consulta = (Statement) c.createStatement();
+            ResultSet resultado = consulta.executeQuery("SELECT MAX(id_fila) AS id_fila FROM archivo_csv_parseado");
+            if (resultado.next()) {
+                longitud = resultado.getInt("id_fila");
+            }
+            return longitud;
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+        
+    }
     
     
     ////////////////////////////////////
@@ -158,17 +193,4 @@ public class ConsultasBBDD {
         }
     }
 
-    void generarResulset() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
-            Statement consultador = (Statement) c.createStatement();
-            
-            
-        } catch (SQLException ex) {
-            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
-        } catch (ClassNotFoundException ex2) {
-            System.out.println("No se pudo cargar el driver: " + ex2);
-        }
-    }
 }

@@ -21,6 +21,5 @@ public class Ejecutor {
 //        String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
 //        PRO.parsearFicheroHaciaBD(ruta);
         
-        SQL.generarResulset();
     }
 }

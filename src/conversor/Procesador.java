@@ -1,8 +1,14 @@
 package conversor;
 
 import com.csvreader.CsvReader;
+import com.mysql.jdbc.Connection;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* 
  * @autor Isaac Giménez Sánchez
@@ -10,12 +16,13 @@ import java.io.IOException;
 
 public class Procesador {
     
-    private ConsultasBBDD SQL = new ConsultasBBDD();
+//    private ConsultasBBDD SQL = new ConsultasBBDD();
     
     /* 
      * Lee el fichero CSV y almacena los datos en "catalogWS.archivo_csv_parseado".
      */
     public void parsearFicheroHaciaBD (String ruta) {
+        String[] arrayFila = null;
         try {
             CsvReader lector = new CsvReader(ruta);
             
@@ -60,8 +67,19 @@ public class Procesador {
                 String tarifa_profesional = lector.get(33);                 //tarifa_profesional
                 String tarifa_premium = lector.get(34);                     //tarifa_premium
 
-                String[] arrayFila = goesArray(familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium);
-                SQL.meterFilaEnTabla(arrayFila);
+                arrayFila = goesArray(familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium);
+                
+                String consultaFinal = crearConsultaInsert(arrayFila);
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
+                    Statement consulta = (Statement) c.createStatement();
+                    consulta.execute(consultaFinal);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             lector.close();
         } catch (FileNotFoundException e) {
@@ -126,7 +144,7 @@ public class Procesador {
         return consultaCreada;
     }
     
-    
+
     
     
     ////////////////////////////////////
