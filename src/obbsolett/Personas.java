@@ -1,5 +1,6 @@
 package obbsolett;
 
+// este dato es nuevo
 
 
 /* Descripció de la classe:
