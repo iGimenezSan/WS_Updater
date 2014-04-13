@@ -1,5 +1,7 @@
 package conversor;
 
+import añadirNovedades.LecturaInputCSV;
+
 /** Programa:   Ejecutor.java - (UTF-8)
   * Autor:      McKyavelik
   * 
@@ -9,7 +11,7 @@ package conversor;
         
 public class Ejecutor {
 
-   private Procesador PRO = new Procesador();
+   private LecturaInputCSV PRO = new LecturaInputCSV();
    private ConsultasBBDD SQL = new ConsultasBBDD();
     
     public static void main (String[] Args) {

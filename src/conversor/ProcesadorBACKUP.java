@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @autor Isaac Giménez Sánchez
  */
 
-public class Procesador {
+public class ProcesadorBACKUP {
     
 //    private ConsultasBBDD SQL = new ConsultasBBDD();
     
