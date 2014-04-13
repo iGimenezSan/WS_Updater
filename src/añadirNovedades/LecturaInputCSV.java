@@ -3,6 +3,9 @@ package añadirNovedades;
 import com.csvreader.CsvReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 
 /* 
  * @autor Isaac Giménez Sánchez
@@ -10,7 +13,23 @@ import java.io.IOException;
 
 public class LecturaInputCSV {
     
-//    private ConsultasBBDD SQL = new ConsultasBBDD();
+    
+    
+    public void aaa () {
+        try {
+            URL myURL = new URL("http://example.com/");
+            URLConnection myURLConnection = myURL.openConnection();
+            myURLConnection.connect();
+        } 
+        catch (MalformedURLException e) { 
+        // new URL() failed
+        // ...
+        } 
+        catch (IOException e) {   
+    // openConnection() failed
+    // ...
+}
+    }
     
     /* 
      * Lee el fichero CSV y almacena los datos en "catalogWS.archivo_csv_parseado".
