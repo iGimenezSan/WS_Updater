@@ -12,23 +12,21 @@ import java.net.URLConnection;
  */
 
 public class LecturaInputCSV {
-    
-    
-    
-    public void aaa () {
+        
+    public void recibirFichero () {
         try {
             URL myURL = new URL("http://example.com/");
             URLConnection myURLConnection = myURL.openConnection();
             myURLConnection.connect();
         } 
         catch (MalformedURLException e) { 
-        // new URL() failed
-        // ...
+            // new URL() failed
+            System.out.println("Fallo de creación de URL.");
         } 
         catch (IOException e) {   
-    // openConnection() failed
-    // ...
-}
+            // openConnection() failed
+            System.out.println("Fallo de conexión I/O con el fichero.");
+        }
     }
     
     /* 

@@ -1,11 +1,11 @@
-package rutas;
+package toolbox;
 
 /** Programa:   rutasArchivos.java - (UTF-8)
   * Autor:      McKyavelik
   * 
 **/
 
-public class rutasArchivos {
+public class RutasArchivos {
 
     // Ruta al fichero del listado general de Productos.
     public String urlProductosGeneral () {
