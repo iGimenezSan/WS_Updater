@@ -1,26 +1,7 @@
-package conversor;
+package obbsolett;
 
-/** Programa:   Producto.java - (UTF-8)
-  * Autor:      McKyavelik
-  * 
-  * Esta clase es la que define los atributos y cómo construir los
-  * objetos de tipo Producto.
-  * 
-  * Se cogen solo algunos de los datos de cada línea y se crea un objeto nuevo
-  *     con esos datos. Cada objeto se guarda en una posición del ArrayList.
-  * 
-  * Después ya no se acceder a cada uno de los datos (familia, codigo, etc.) de
-  *     cada objeto que hay en cada posición del ArrayList.
-  * 
-  * Puedo acceder al objeto. Usando el método Iterator de la clase ArrayList,
-  *     pero lo que visualizo es una lista del mismo tamaño que el CSV con
-  *     lo que entiendo que serán los codificadores del objeto: "conversor.Producto@fd0a62"
-  *     pero sigo sin entender como acceder a los datos(atributos, creo) de cada objeto.
-  * 
-**/
-
-public class Producto {
-
+public class ProductoNovedadOLD {
+    
     private String familia;
     private String subfamilia;
     private String codigo;
@@ -43,7 +24,7 @@ public class Producto {
     private String imagen_grande_10;
     private String descripcionHTML;
 
-    public Producto(String familia, String subfamilia, String codigo, String nombre, String marca, String precio, String stock_disponible, String talla, String iva, String imagenOr, String imagen_grande_1, String imagen_grande_2, String imagen_grande_3, String imagen_grande_4, String imagen_grande_5, String imagen_grande_6, String imagen_grande_7, String imagen_grande_8, String imagen_grande_9, String imagen_grande_10, String descripcionHTML) {
+    public ProductoNovedadOLD(String familia, String subfamilia, String codigo, String nombre, String marca, String precio, String stock_disponible, String talla, String iva, String imagenOr, String imagen_grande_1, String imagen_grande_2, String imagen_grande_3, String imagen_grande_4, String imagen_grande_5, String imagen_grande_6, String imagen_grande_7, String imagen_grande_8, String imagen_grande_9, String imagen_grande_10, String descripcionHTML) {
         this.familia = familia;
         this.subfamilia = subfamilia;
         this.codigo = codigo;
