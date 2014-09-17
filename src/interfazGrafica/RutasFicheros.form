@@ -26,129 +26,146 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" max="32767" attributes="0"/>
-                  <Component id="jTextField2" max="32767" attributes="0"/>
-                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jTextField6" alignment="0" pref="374" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="fieldname_products" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fieldname_latest" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fieldname_offers" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fieldname_stock" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fieldname_noStock" alignment="0" max="32767" attributes="0"/>
+                          <Component id="fieldname_expired" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="textfield_noStock" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_stock" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_offers" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_latest" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_products" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_expired" pref="370" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="title_seccion1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="title_seccion1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_products" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_products" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_latest" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_latest" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_offers" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_offers" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_stock" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_stock" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_noStock" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_noStock" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_expired" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfield_expired" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="title_seccion1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rutas a los ficheros CSV de descarga de datos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_products">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lista Completa de Productos"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Lista de Novedades"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Lista de Ofertas"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Productos sin Stock"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Productos Descatalogados"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Stock Actual de Productos"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="textfield_products">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_sin_dvd.csv"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JLabel" name="fieldname_latest">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lista de Novedades"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_latest">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_novedades.csv"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_latestActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JLabel" name="fieldname_offers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lista de Ofertas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_offers">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_ofertas.csv"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JLabel" name="fieldname_stock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Stock Actual de Productos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_stock">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_stock.csv"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JLabel" name="fieldname_noStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Productos sin Stock"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_noStock">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JLabel" name="fieldname_expired">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Productos Descatalogados"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_expired">
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_descatalogados.csv"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_expiredActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

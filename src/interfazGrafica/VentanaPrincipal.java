@@ -36,10 +36,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         menuItemParametros = new javax.swing.JMenuItem();
         menuItemRutas = new javax.swing.JMenuItem();
+        menuItemBaseDatos = new javax.swing.JMenuItem();
 
         jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("WS Updater Control Panel");
+        setResizable(false);
 
         jMenu4.setText("Carga de Datos");
 
@@ -69,6 +72,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(menuItemRutas);
 
+        menuItemBaseDatos.setText("Conexion a Base de Datos");
+        menuItemBaseDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemBaseDatosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemBaseDatos);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -77,11 +88,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,16 +105,22 @@ private void inicioSesion() {
     }
 
     private void menuItemParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemParametrosActionPerformed
-        Parametros obj = new Parametros();
-        Escritorio.add(obj);
-        obj.show();
+        Parametros vent_Parametros = new Parametros();
+        Escritorio.add(vent_Parametros);
+        vent_Parametros.show();
     }//GEN-LAST:event_menuItemParametrosActionPerformed
 
     private void menuItemRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRutasActionPerformed
-        RutasFicheros obj = new RutasFicheros();
-        Escritorio.add(obj);
-        obj.show();
+        RutasFicheros vent_Rutas = new RutasFicheros();
+        Escritorio.add(vent_Rutas);
+        vent_Rutas.show();
     }//GEN-LAST:event_menuItemRutasActionPerformed
+
+    private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBaseDatosActionPerformed
+        ConexionBBDD vent_BaseDatos = new ConexionBBDD();
+        Escritorio.add(vent_BaseDatos);
+        vent_BaseDatos.show();
+    }//GEN-LAST:event_menuItemBaseDatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +164,7 @@ private void inicioSesion() {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem menuItemBaseDatos;
     private javax.swing.JMenuItem menuItemParametros;
     private javax.swing.JMenuItem menuItemRutas;
     // End of variables declaration//GEN-END:variables

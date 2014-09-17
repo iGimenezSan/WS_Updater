@@ -47,7 +47,7 @@ public class ConsultasBBDD {
             Class.forName(driverName);
             Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
             Statement consulta = (Statement) c.createStatement();
-            consulta.execute(consultaFinal);
+            consulta.execute("SELEC);
         } catch (SQLException ex) {
             Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -165,7 +165,7 @@ public class ConsultasBBDD {
 
     private void actualizarPrecio(String idProducto, String precio) {
         
-        precio = PRO.cambiarFormato_Precio(precio);
+      //  precio = PRO.cambiarFormato_Precio(precio);
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");

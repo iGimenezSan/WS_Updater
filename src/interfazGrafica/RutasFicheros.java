@@ -26,18 +26,19 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        title_seccion1 = new javax.swing.JLabel();
+        fieldname_products = new javax.swing.JLabel();
+        textfield_products = new javax.swing.JTextField();
+        fieldname_latest = new javax.swing.JLabel();
+        textfield_latest = new javax.swing.JTextField();
+        fieldname_offers = new javax.swing.JLabel();
+        textfield_offers = new javax.swing.JTextField();
+        fieldname_stock = new javax.swing.JLabel();
+        textfield_stock = new javax.swing.JTextField();
+        fieldname_noStock = new javax.swing.JLabel();
+        textfield_noStock = new javax.swing.JTextField();
+        fieldname_expired = new javax.swing.JLabel();
+        textfield_expired = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -45,34 +46,41 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Rutas a Ficheros");
 
-        jLabel1.setText("Lista Completa de Productos");
+        title_seccion1.setText("Rutas a los ficheros CSV de descarga de datos");
 
-        jLabel2.setText("Lista de Novedades");
+        fieldname_products.setText("Lista Completa de Productos");
 
-        jLabel3.setText("Lista de Ofertas");
+        textfield_products.setText("http://media.grutinet.com/ficheros/productos_sin_dvd.csv");
 
-        jLabel4.setText("Productos sin Stock");
+        fieldname_latest.setText("Lista de Novedades");
 
-        jLabel5.setText("Productos Descatalogados");
-
-        jLabel6.setText("Stock Actual de Productos");
-
-        jTextField1.setText("http://media.grutinet.com/ficheros/productos_sin_dvd.csv");
-
-        jTextField2.setText("http://media.grutinet.com/ficheros/productos_csv_novedades.csv");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        textfield_latest.setText("http://media.grutinet.com/ficheros/productos_csv_novedades.csv");
+        textfield_latest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                textfield_latestActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("http://media.grutinet.com/ficheros/productos_csv_ofertas.csv");
+        fieldname_offers.setText("Lista de Ofertas");
 
-        jTextField4.setText("http://media.grutinet.com/ficheros/productos_stock.csv");
+        textfield_offers.setText("http://media.grutinet.com/ficheros/productos_csv_ofertas.csv");
 
-        jTextField5.setText("http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv");
+        fieldname_stock.setText("Stock Actual de Productos");
 
-        jTextField6.setText("http://media.grutinet.com/ficheros/productos_csv_descatalogados.csv");
+        textfield_stock.setText("http://media.grutinet.com/ficheros/productos_stock.csv");
+
+        fieldname_noStock.setText("Productos sin Stock");
+
+        textfield_noStock.setText("http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv");
+
+        fieldname_expired.setText("Productos Descatalogados");
+
+        textfield_expired.setText("http://media.grutinet.com/ficheros/productos_csv_descatalogados.csv");
+        textfield_expired.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_expiredActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,71 +88,83 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(fieldname_products, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldname_latest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldname_offers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldname_stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldname_noStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fieldname_expired, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(textfield_noStock, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_stock, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_offers, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_latest, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_products, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_expired, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)))
+                    .addComponent(title_seccion1))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(title_seccion1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldname_products)
+                    .addComponent(textfield_products, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldname_latest)
+                    .addComponent(textfield_latest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldname_offers)
+                    .addComponent(textfield_offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldname_stock)
+                    .addComponent(textfield_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(fieldname_noStock)
+                    .addComponent(textfield_noStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldname_expired)
+                    .addComponent(textfield_expired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void textfield_latestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_latestActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_textfield_latestActionPerformed
+
+    private void textfield_expiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_expiredActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_expiredActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel fieldname_expired;
+    private javax.swing.JLabel fieldname_latest;
+    private javax.swing.JLabel fieldname_noStock;
+    private javax.swing.JLabel fieldname_offers;
+    private javax.swing.JLabel fieldname_products;
+    private javax.swing.JLabel fieldname_stock;
+    private javax.swing.JTextField textfield_expired;
+    private javax.swing.JTextField textfield_latest;
+    private javax.swing.JTextField textfield_noStock;
+    private javax.swing.JTextField textfield_offers;
+    private javax.swing.JTextField textfield_products;
+    private javax.swing.JTextField textfield_stock;
+    private javax.swing.JLabel title_seccion1;
     // End of variables declaration//GEN-END:variables
 }
