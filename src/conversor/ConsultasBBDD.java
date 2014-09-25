@@ -1,6 +1,5 @@
 package conversor;
 
-import añadirNovedades.LecturaInputCSV;
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,62 +22,35 @@ public class ConsultasBBDD {
 
         // defined and set value in  dbName, userName and password variables
         static String dbName = "catalogws";
-        static String userName = "tester";
-        static String password = "tester"; 
+        static String userName = "root";
+        static String password = "root"; 
 
 //    /*
 //     * Bloque main extra para pruebas de conexión con la base de datos.
 //     */
-//    public static void main (String[] args) {
-//        ConsultasBBDD programa = new ConsultasBBDD();
-//        programa.
-//    }
-    
-    private LecturaInputCSV PRO = new LecturaInputCSV();
-    
-    /*
-     * Genera la sentencia INSERT para cada fila del CSV y la ejecuta
-     */
-    public void meterFilaEnTabla (String[] fila) {
-        
-        String consultaFinal = PRO.crearConsultaInsert(fila);
-        
-        try {
-            Class.forName(driverName);
-            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
-            Statement consulta = (Statement) c.createStatement();
-            consulta.execute("SELEC);
-        } catch (SQLException ex) {
-            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public static void main (String[] args) {
+        ConsultasBBDD programa = new ConsultasBBDD();
+        programa.consultaPrueba();
     }
     
-    /*
-     * Obtinene un INT con la longitud del listado.
-     */
-    public int obtenerLongitudListado () {
-        int longitud = 0;
+    public void consultaPrueba () {
+        
         try {
             Class.forName(driverName);
             Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
             Statement consulta = (Statement) c.createStatement();
-            ResultSet resultado = consulta.executeQuery("SELECT MAX(id_fila) AS id_fila FROM archivo_csv_parseado");
-            if (resultado.next()) {
-                longitud = resultado.getInt("id_fila");
+            ResultSet resultado = consulta.executeQuery("SELECT * FROM panel_control_usuarios WHERE id_usuario = '1'");
+            
+            while (resultado.next()) {
+                System.out.println("Nombre de usuario = " + resultado.getObject("nombre_usuario"));
             }
-            return longitud;
+            
         } catch (SQLException ex) {
             Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-            return 0;
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-            return 0;
         }
-        
     }
-    
     
     ////////////////////////////////////
     //////                      ////////
@@ -86,32 +58,6 @@ public class ConsultasBBDD {
     //////                      ////////
     ////////////////////////////////////
     
-    public boolean mirarSiExisteEnTablaProductos(String modeloBuscado) {
-        // Buscar el modelo en cuestión en la tabla producto (productos sin talla)
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "tester", "tester");
-            Statement consulta = (Statement) c.createStatement();
-            ResultSet consultaProducts = consulta.executeQuery("SELECT products_model FROM products;");
-
-            boolean resultado = false;
-            
-            while (consultaProducts.next()) {
-                String modeloEnBBDD = consultaProducts.getString("products_model");
-                if (modeloBuscado.equalsIgnoreCase(modeloEnBBDD)) {
-                    resultado = true;
-                }
-            }
-
-            return resultado;
-        } catch (SQLException ex) {
-            System.out.println("Hubo un error con los comandos SQL buscando en productos: " + ex);
-            return false;
-        } catch (ClassNotFoundException ex2) {
-            System.out.println("No se pudo cargar el driver: " + ex2);
-            return false;
-        }
-    }
 
     public boolean mirarSiExisteEnTablaRelaciones (String modeloBuscado) {
         try {

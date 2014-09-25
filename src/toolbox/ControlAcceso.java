@@ -1,5 +1,6 @@
 package toolbox;
 
+// Importación de clases técnicas
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -7,10 +8,14 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+// Importación de clases propias
+
+        
 /**
  *
  * @author iGimenezSan
  */
+
 public class ControlAcceso {
     
     // JDBC driver name and database URL
