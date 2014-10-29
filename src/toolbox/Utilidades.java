@@ -1,7 +1,8 @@
-package conversor;
+package toolbox;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import objetos.ProductosGlobal;
 
 /* Descripció de la classe:
  * 
@@ -9,7 +10,7 @@ import java.util.Iterator;
  * @autor Isaac Giménez Sánchez
  */
 
-public class Salida {
+public class Utilidades {
 
     // Metodo libreria para mostrar el contenido de un ArrayList de Objetos
     public void iterarListaObjetos(ArrayList lista) { 
@@ -34,5 +35,13 @@ public class Salida {
         for (int i = 0; i < array.length; i++){
             System.out.println(array[i]);
         }
-    }    
+    }
+
+    void mostrarArrayProductos(ArrayList<ProductosGlobal> ListaProductos) {
+        
+        int size = ListaProductos.size();
+        System.out.println("La lista contiene: " + size);
+        
+    }
+    
 }

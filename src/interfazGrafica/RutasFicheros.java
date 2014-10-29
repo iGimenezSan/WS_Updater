@@ -29,16 +29,28 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
         title_seccion1 = new javax.swing.JLabel();
         fieldname_products = new javax.swing.JLabel();
         textfield_products = new javax.swing.JTextField();
+        fieldname_destinoProducts = new javax.swing.JLabel();
+        textfield_destinoProducts = new javax.swing.JTextField();
         fieldname_latest = new javax.swing.JLabel();
         textfield_latest = new javax.swing.JTextField();
+        fieldname_destinoLatest = new javax.swing.JLabel();
+        textfield_destinoLatest = new javax.swing.JTextField();
         fieldname_offers = new javax.swing.JLabel();
         textfield_offers = new javax.swing.JTextField();
+        fieldname_destinoOffers = new javax.swing.JLabel();
+        textfield_destinoOffers = new javax.swing.JTextField();
         fieldname_stock = new javax.swing.JLabel();
         textfield_stock = new javax.swing.JTextField();
+        fieldname_destinoStock = new javax.swing.JLabel();
+        textfield_destinoStock = new javax.swing.JTextField();
         fieldname_noStock = new javax.swing.JLabel();
         textfield_noStock = new javax.swing.JTextField();
+        fieldname_destinoNoStock = new javax.swing.JLabel();
+        textfield_destinoNoStock = new javax.swing.JTextField();
         fieldname_expired = new javax.swing.JLabel();
         textfield_expired = new javax.swing.JTextField();
+        fieldname_destinoExpired = new javax.swing.JLabel();
+        textfield_destinoExpired = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -51,6 +63,20 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
         fieldname_products.setText("Lista Completa de Productos");
 
         textfield_products.setText("http://media.grutinet.com/ficheros/productos_sin_dvd.csv");
+        textfield_products.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_productsActionPerformed(evt);
+            }
+        });
+
+        fieldname_destinoProducts.setText("Ruta Local Destino");
+
+        textfield_destinoProducts.setText("c:\\FicherosGrutinet\\Productos.csv");
+        textfield_destinoProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoProductsActionPerformed(evt);
+            }
+        });
 
         fieldname_latest.setText("Lista de Novedades");
 
@@ -61,17 +87,53 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
             }
         });
 
+        fieldname_destinoLatest.setText("Ruta Local Destino");
+
+        textfield_destinoLatest.setText("c:\\FicherosGrutinet\\Novedades.csv");
+        textfield_destinoLatest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoLatestActionPerformed(evt);
+            }
+        });
+
         fieldname_offers.setText("Lista de Ofertas");
 
         textfield_offers.setText("http://media.grutinet.com/ficheros/productos_csv_ofertas.csv");
+
+        fieldname_destinoOffers.setText("Ruta Local Destino");
+
+        textfield_destinoOffers.setText("c:\\FicherosGrutinet\\Ofertas.csv");
+        textfield_destinoOffers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoOffersActionPerformed(evt);
+            }
+        });
 
         fieldname_stock.setText("Stock Actual de Productos");
 
         textfield_stock.setText("http://media.grutinet.com/ficheros/productos_stock.csv");
 
+        fieldname_destinoStock.setText("Ruta Local Destino");
+
+        textfield_destinoStock.setText("c:\\FicherosGrutinet\\Stock.csv");
+        textfield_destinoStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoStockActionPerformed(evt);
+            }
+        });
+
         fieldname_noStock.setText("Productos sin Stock");
 
         textfield_noStock.setText("http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv");
+
+        fieldname_destinoNoStock.setText("Ruta Local Destino");
+
+        textfield_destinoNoStock.setText("c:\\FicherosGrutinet\\SinStock.csv");
+        textfield_destinoNoStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoNoStockActionPerformed(evt);
+            }
+        });
 
         fieldname_expired.setText("Productos Descatalogados");
 
@@ -79,6 +141,15 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
         textfield_expired.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textfield_expiredActionPerformed(evt);
+            }
+        });
+
+        fieldname_destinoExpired.setText("Ruta Local Destino");
+
+        textfield_destinoExpired.setText("c:\\FicherosGrutinet\\SinStock.csv");
+        textfield_destinoExpired.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoExpiredActionPerformed(evt);
             }
         });
 
@@ -90,24 +161,38 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fieldname_products, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldname_latest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldname_offers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldname_stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldname_noStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fieldname_expired, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(fieldname_products, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fieldname_offers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fieldname_stock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fieldname_noStock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fieldname_expired, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fieldname_latest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(fieldname_destinoProducts, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldname_destinoLatest, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldname_destinoOffers, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldname_destinoStock, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldname_destinoNoStock, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fieldname_destinoExpired, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(textfield_noStock, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textfield_stock, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textfield_offers, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfield_latest, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textfield_products, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfield_expired, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)))
+                            .addComponent(textfield_expired, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addComponent(textfield_destinoProducts, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_latest, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_destinoLatest, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addComponent(textfield_destinoOffers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addComponent(textfield_destinoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addComponent(textfield_destinoNoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                            .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)))
                     .addComponent(title_seccion1))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,27 +203,51 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_products)
                     .addComponent(textfield_products, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoProducts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoProducts))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_latest)
                     .addComponent(textfield_latest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoLatest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoLatest))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_offers)
                     .addComponent(textfield_offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoOffers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoOffers))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_stock)
                     .addComponent(textfield_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoStock))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_noStock)
                     .addComponent(textfield_noStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoNoStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoNoStock))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldname_expired)
                     .addComponent(textfield_expired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_destinoExpired))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,13 +261,53 @@ public class RutasFicheros extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textfield_expiredActionPerformed
 
+    private void textfield_productsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_productsActionPerformed
+        textfield_products.getText();
+    }//GEN-LAST:event_textfield_productsActionPerformed
+
+    private void textfield_destinoProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoProductsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoProductsActionPerformed
+
+    private void textfield_destinoLatestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoLatestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoLatestActionPerformed
+
+    private void textfield_destinoOffersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoOffersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoOffersActionPerformed
+
+    private void textfield_destinoStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoStockActionPerformed
+
+    private void textfield_destinoNoStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoNoStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoNoStockActionPerformed
+
+    private void textfield_destinoExpiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoExpiredActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoExpiredActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fieldname_destinoExpired;
+    private javax.swing.JLabel fieldname_destinoLatest;
+    private javax.swing.JLabel fieldname_destinoNoStock;
+    private javax.swing.JLabel fieldname_destinoOffers;
+    private javax.swing.JLabel fieldname_destinoProducts;
+    private javax.swing.JLabel fieldname_destinoStock;
     private javax.swing.JLabel fieldname_expired;
     private javax.swing.JLabel fieldname_latest;
     private javax.swing.JLabel fieldname_noStock;
     private javax.swing.JLabel fieldname_offers;
     private javax.swing.JLabel fieldname_products;
     private javax.swing.JLabel fieldname_stock;
+    private javax.swing.JTextField textfield_destinoExpired;
+    private javax.swing.JTextField textfield_destinoLatest;
+    private javax.swing.JTextField textfield_destinoNoStock;
+    private javax.swing.JTextField textfield_destinoOffers;
+    private javax.swing.JTextField textfield_destinoProducts;
+    private javax.swing.JTextField textfield_destinoStock;
     private javax.swing.JTextField textfield_expired;
     private javax.swing.JTextField textfield_latest;
     private javax.swing.JTextField textfield_noStock;

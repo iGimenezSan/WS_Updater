@@ -1,6 +1,7 @@
 package conversor;
 
-import añadirNovedades.LecturaInputCSV;
+import toolbox.LecturaInputCSV;
+import toolbox.Utilidades;
 
 /** Programa:   Ejecutor.java - (UTF-8)
   * Autor:      McKyavelik
@@ -11,8 +12,9 @@ import añadirNovedades.LecturaInputCSV;
         
 public class Ejecutor {
 
-   private LecturaInputCSV PRO = new LecturaInputCSV();
-   private ConsultasBBDD SQL = new ConsultasBBDD();
+    private LecturaInputCSV PRO = new LecturaInputCSV();
+    private ConsultasBBDD SQL = new ConsultasBBDD();
+    private Utilidades UTI = new Utilidades();
     
     public static void main (String[] Args) {
         Ejecutor programa = new Ejecutor();
@@ -20,8 +22,8 @@ public class Ejecutor {
     }
     
     public void goes(){
-//        String ruta = "C:/Laboratorio/Wet Sensations/productos_sin_dvd.csv";
-//        PRO.parsearFicheroHaciaBD(ruta);
+
+        PRO.leerProductosGlobal("d:/FicherosGrutinet/descargados/productos.csv");
         
     }
 }

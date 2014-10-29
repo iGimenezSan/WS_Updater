@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+<Form version="1.8" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
@@ -30,28 +30,44 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="fieldname_products" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fieldname_latest" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fieldname_offers" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fieldname_stock" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fieldname_noStock" alignment="0" max="32767" attributes="0"/>
-                          <Component id="fieldname_expired" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="fieldname_products" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fieldname_offers" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fieldname_stock" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fieldname_noStock" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fieldname_expired" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="fieldname_latest" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="fieldname_destinoProducts" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldname_destinoLatest" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldname_destinoOffers" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldname_destinoStock" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldname_destinoNoStock" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="fieldname_destinoExpired" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="textfield_noStock" alignment="0" max="32767" attributes="0"/>
                           <Component id="textfield_stock" alignment="0" max="32767" attributes="0"/>
                           <Component id="textfield_offers" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textfield_latest" alignment="0" max="32767" attributes="0"/>
                           <Component id="textfield_products" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textfield_expired" pref="370" max="32767" attributes="0"/>
+                          <Component id="textfield_expired" pref="430" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoProducts" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_latest" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoLatest" alignment="0" pref="430" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoOffers" alignment="0" pref="430" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoStock" alignment="0" pref="430" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoNoStock" alignment="0" pref="430" max="32767" attributes="0"/>
+                          <Component id="textfield_destinoExpired" alignment="0" pref="430" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="title_seccion1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,32 +81,62 @@
                   <Component id="fieldname_products" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_products" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoProducts" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoProducts" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fieldname_latest" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_latest" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoLatest" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoLatest" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fieldname_offers" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_offers" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoOffers" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoOffers" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fieldname_stock" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_stock" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoStock" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoStock" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fieldname_noStock" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_noStock" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoNoStock" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoNoStock" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fieldname_expired" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textfield_expired" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="textfield_destinoExpired" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="fieldname_destinoExpired" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -110,6 +156,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_sin_dvd.csv"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_productsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoProducts">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoProducts">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cProductos.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoProductsActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fieldname_latest">
       <Properties>
@@ -124,6 +186,19 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_latestActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoLatest">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoLatest">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cNovedades.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoLatestActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JLabel" name="fieldname_offers">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lista de Ofertas"/>
@@ -133,6 +208,19 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_ofertas.csv"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoOffers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoOffers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cOfertas.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoOffersActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fieldname_stock">
       <Properties>
@@ -144,6 +232,19 @@
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_stock.csv"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cStock.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoStockActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JLabel" name="fieldname_noStock">
       <Properties>
         <Property name="text" type="java.lang.String" value="Productos sin Stock"/>
@@ -153,6 +254,19 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoNoStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoNoStock">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cSinStock.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoNoStockActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="fieldname_expired">
       <Properties>
@@ -165,6 +279,19 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_expiredActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fieldname_destinoExpired">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ruta Local Destino"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfield_destinoExpired">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="c:\u005cFicherosGrutinet\u005cSinStock.csv" containsInvalidXMLChars="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_destinoExpiredActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

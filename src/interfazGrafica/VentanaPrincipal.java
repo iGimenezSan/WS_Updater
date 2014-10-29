@@ -8,14 +8,18 @@ package interfazGrafica;
  *
  * @author iGimenezSan
  */
+
+
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+//    public DescargaFicheros TOOL_DOWNLOAD = new DescargaFicheros();
+    
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
-        inicioSesion();
+//        inicioSesion();
     }
 
     /**
@@ -32,7 +36,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuItemProductos = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         menuItemParametros = new javax.swing.JMenuItem();
         menuItemRutas = new javax.swing.JMenuItem();
@@ -42,7 +47,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WS Updater Control Panel");
-        setResizable(false);
 
         jMenu4.setText("Carga de Datos");
 
@@ -51,8 +55,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu3.setText("Actualizar");
-        jMenuBar1.add(jMenu3);
+        menuItemProductos.setText("Actualizar");
+        menuItemProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemProductosActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setText("Descargar Ficheros");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuItemProductos.add(jMenuItem1);
+
+        jMenuBar1.add(menuItemProductos);
 
         jMenu1.setText("Configuracion");
 
@@ -122,6 +140,17 @@ private void inicioSesion() {
         vent_BaseDatos.show();
     }//GEN-LAST:event_menuItemBaseDatosActionPerformed
 
+    private void menuItemProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemProductosActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        VentanaInternaDescargas vent_Descargadores = new VentanaInternaDescargas();
+        Escritorio.add(vent_Descargadores);
+        vent_Descargadores.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,12 +189,13 @@ private void inicioSesion() {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem menuItemBaseDatos;
     private javax.swing.JMenuItem menuItemParametros;
+    private javax.swing.JMenu menuItemProductos;
     private javax.swing.JMenuItem menuItemRutas;
     // End of variables declaration//GEN-END:variables
 }
