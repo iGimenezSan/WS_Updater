@@ -1,56 +1,32 @@
-package conversor;
+package toolbox;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import interfazGrafica.Parametros;
 
 
-/** Programa:   ConsultasBBDD.java - (UTF-8)
+/** Programa:   ConectoresBDD.java - (UTF-8)
   * Autor:      McKyavelik
   * 
 **/
 
-public class ConsultasBBDD {
+public class ConectoresBDD {
     
-        // JDBC driver name and database URL
-        static String driverName = "com.mysql.jdbc.Driver";
-        static String url = "jdbc:mysql://localhost:3306/";
-
-        // defined and set value in  dbName, userName and password variables
-        static String dbName = "catalogws";
-        static String userName = "root";
-        static String password = "root"; 
-
-//    /*
-//     * Bloque main extra para pruebas de conexión con la base de datos.
-//     */
-    public static void main (String[] args) {
-        ConsultasBBDD programa = new ConsultasBBDD();
-        programa.consultaPrueba();
-    }
+    public static Parametros PARAM = new Parametros();
     
-    public void consultaPrueba () {
+        static String Nombre_Driver = PARAM.getDriverName();
+        static String urlBaseDatosLocal = PARAM.getURLBaseDatosLocal();
         
-        try {
-            Class.forName(driverName);
-            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
-            Statement consulta = (Statement) c.createStatement();
-            ResultSet resultado = consulta.executeQuery("SELECT * FROM panel_control_usuarios WHERE id_usuario = '1'");
-            
-            while (resultado.next()) {
-                System.out.println("Nombre de usuario = " + resultado.getObject("nombre_usuario"));
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+        static String BaseDatosLocal = PARAM.getNombreBaseDatosLocal();
+        static String NombreUsuarioLocal = PARAM.getNombreUsuarioLocal();
+        static String PasswordUsuarioLocal = PARAM.getPasswordUsuarioLocal();
+
+
+    
     
     ////////////////////////////////////
     //////                      ////////
@@ -58,6 +34,20 @@ public class ConsultasBBDD {
     //////                      ////////
     ////////////////////////////////////
     
+//    public void consultaPrueba () {
+//        
+//        try {
+//            Class.forName(driverName);
+//            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
+//            Statement insert = c.createStatement();
+//            insert.executeUpdate("INSERT INTO updater_rutas_ficheros (nombre_fichero, url_descarga, rutaLocal_destino) VALUES (" + nombre + ", " + url + ", " + ruta + ")");
+//                    ResultSet resultado = consulta.executeQuery("SELECT * FROM panel_control_usuarios WHERE id_usuario = '1'");
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
     public boolean mirarSiExisteEnTablaRelaciones (String modeloBuscado) {
         try {

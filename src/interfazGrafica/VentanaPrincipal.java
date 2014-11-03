@@ -1,18 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfazGrafica;
 
-/**
- *
- * @author iGimenezSan
- */
-
+import java.util.ArrayList;
+import objetos.ProductosGlobal;
+import toolbox.Utilidades;
+import toolbox.Lectores;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-//    public DescargaFicheros TOOL_DOWNLOAD = new DescargaFicheros();
+    public static Utilidades UTIL = new Utilidades();
+    public static Lectores LECT = new Lectores();
+    public static Parametros PARAM = new Parametros();
     
     /**
      * Creates new form VentanaPrincipal
@@ -34,26 +31,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
         menuItemProductos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         menuItemParametros = new javax.swing.JMenuItem();
-        menuItemRutas = new javax.swing.JMenuItem();
-        menuItemBaseDatos = new javax.swing.JMenuItem();
 
         jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WS Updater Control Panel");
-
-        jMenu4.setText("Carga de Datos");
-
-        jMenuItem3.setText("Cargar Productos");
-        jMenu4.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu4);
 
         menuItemProductos.setText("Actualizar");
         menuItemProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +48,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("Descargar Ficheros");
+        jMenuItem1.setText("Actualizadores");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -82,22 +68,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(menuItemParametros);
 
-        menuItemRutas.setText("Rutas a Ficheros");
-        menuItemRutas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemRutasActionPerformed(evt);
-            }
-        });
-        jMenu1.add(menuItemRutas);
-
-        menuItemBaseDatos.setText("Conexion a Base de Datos");
-        menuItemBaseDatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemBaseDatosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(menuItemBaseDatos);
-
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -106,50 +76,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-private void inicioSesion() {                                                   
-        InicioSesion objInicio = new InicioSesion();
-        Escritorio.add(objInicio);
-        objInicio.show();
-    }
-
-    private void menuItemParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemParametrosActionPerformed
-        Parametros vent_Parametros = new Parametros();
-        Escritorio.add(vent_Parametros);
-        vent_Parametros.show();
-    }//GEN-LAST:event_menuItemParametrosActionPerformed
-
-    private void menuItemRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRutasActionPerformed
-        RutasFicheros vent_Rutas = new RutasFicheros();
-        Escritorio.add(vent_Rutas);
-        vent_Rutas.show();
-    }//GEN-LAST:event_menuItemRutasActionPerformed
-
-    private void menuItemBaseDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBaseDatosActionPerformed
-        ConexionBBDD vent_BaseDatos = new ConexionBBDD();
-        Escritorio.add(vent_BaseDatos);
-        vent_BaseDatos.show();
-    }//GEN-LAST:event_menuItemBaseDatosActionPerformed
 
     private void menuItemProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProductosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuItemProductosActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        VentanaInternaDescargas vent_Descargadores = new VentanaInternaDescargas();
-        Escritorio.add(vent_Descargadores);
-        vent_Descargadores.show();
+        ArrayList<ProductosGlobal> ListaProductos = LECT.leerProductosGlobal(PARAM.getDestinoLocalGlobal());
+        UTIL.mostrarArrayGlobal(ListaProductos);
+        
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void menuItemParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemParametrosActionPerformed
+        Parametros vent_Parametros = new Parametros();
+        Escritorio.add(vent_Parametros);
+        vent_Parametros.show();
+    }//GEN-LAST:event_menuItemParametrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +141,9 @@ private void inicioSesion() {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem menuItemBaseDatos;
     private javax.swing.JMenuItem menuItemParametros;
     private javax.swing.JMenu menuItemProductos;
-    private javax.swing.JMenuItem menuItemRutas;
     // End of variables declaration//GEN-END:variables
 }

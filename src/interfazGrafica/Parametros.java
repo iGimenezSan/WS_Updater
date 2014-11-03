@@ -1,15 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfazGrafica;
+
+import javax.swing.JOptionPane;
+
+import toolbox.Descargadores;
 
 /**
  *
  * @author iGimenezSan
  */
 public class Parametros extends javax.swing.JInternalFrame {
-
+    
+    public static Descargadores DOWN = new Descargadores();
+    
     /**
      * Creates new form Parametros
      */
@@ -26,25 +28,836 @@ public class Parametros extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        Panel1ProdGlobal = new javax.swing.JPanel();
+        title_seccion4 = new javax.swing.JLabel();
+        Panel2ProdGlobal = new javax.swing.JPanel();
+        fieldname_Global = new javax.swing.JLabel();
+        fieldname_DestinoGlobal = new javax.swing.JLabel();
+        fieldname_EstructuraCampos = new javax.swing.JLabel();
+        fieldname_DestinoEstructuraCampos = new javax.swing.JLabel();
+        textfield_Global = new javax.swing.JTextField();
+        textfield_DestinoGlobal = new javax.swing.JTextField();
+        textfield_EstructuraCampos = new javax.swing.JTextField();
+        textfield_DestinoEstructuraCampos = new javax.swing.JTextField();
+        button_descargarFicheroGlobal = new javax.swing.JToggleButton();
+        button_descargaCamposGlobal = new javax.swing.JToggleButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        panel_info_General = new javax.swing.JPanel();
+        title_seccion2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        textfield_driverName = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        panel_info_Local = new javax.swing.JPanel();
+        title_seccion1 = new javax.swing.JLabel();
+        fieldname_url1 = new javax.swing.JLabel();
+        textfield_urlBaseDatosLocal = new javax.swing.JTextField();
+        fieldname_dbName1 = new javax.swing.JLabel();
+        textfield_NombreBaseDatosLocal = new javax.swing.JTextField();
+        fieldname_username1 = new javax.swing.JLabel();
+        textfield_NombreUsuarioLocal = new javax.swing.JTextField();
+        fieldname_password1 = new javax.swing.JLabel();
+        textfield_PasswordUsuarioLocal = new javax.swing.JTextField();
+        panel_info_website = new javax.swing.JPanel();
+        title_seccion3 = new javax.swing.JLabel();
+        fieldname_dbName2 = new javax.swing.JLabel();
+        fieldname_url2 = new javax.swing.JLabel();
+        textfield_url2 = new javax.swing.JTextField();
+        textfield_dbName2 = new javax.swing.JTextField();
+        fieldname_port2 = new javax.swing.JLabel();
+        textfield_port2 = new javax.swing.JTextField();
+        fieldname_username2 = new javax.swing.JLabel();
+        textfield_username2 = new javax.swing.JTextField();
+        fieldname_password2 = new javax.swing.JLabel();
+        textfield_password2 = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        jPanel4 = new javax.swing.JPanel();
+        textfield_destinoStock = new javax.swing.JTextField();
+        textfield_destinoExpired = new javax.swing.JTextField();
+        fieldname_destinoStock = new javax.swing.JLabel();
+        textfield_latest = new javax.swing.JTextField();
+        textfield_stock = new javax.swing.JTextField();
+        fieldname_stock = new javax.swing.JLabel();
+        fieldname_latest = new javax.swing.JLabel();
+        fieldname_destinoLatest = new javax.swing.JLabel();
+        fieldname_noStock = new javax.swing.JLabel();
+        textfield_destinoLatest = new javax.swing.JTextField();
+        textfield_noStock = new javax.swing.JTextField();
+        fieldname_destinoNoStock = new javax.swing.JLabel();
+        textfield_destinoNoStock = new javax.swing.JTextField();
+        fieldname_destinoOffers = new javax.swing.JLabel();
+        fieldname_expired = new javax.swing.JLabel();
+        textfield_destinoOffers = new javax.swing.JTextField();
+        textfield_expired = new javax.swing.JTextField();
+        fieldname_offers = new javax.swing.JLabel();
+        fieldname_destinoExpired = new javax.swing.JLabel();
+        textfield_offers = new javax.swing.JTextField();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setResizable(true);
         setTitle("Parametros");
+
+        title_seccion4.setText("Rutas a los ficheros CSV de descarga de datos");
+
+        fieldname_Global.setText("Global");
+
+        fieldname_DestinoGlobal.setText("Destino Local");
+
+        fieldname_EstructuraCampos.setText("Estructura Campos");
+
+        fieldname_DestinoEstructuraCampos.setText("Destino Local");
+
+        textfield_Global.setText("http://media.grutinet.com/ficheros/productos_sin_dvd.csv");
+        textfield_Global.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_GlobalActionPerformed(evt);
+            }
+        });
+
+        textfield_DestinoGlobal.setText("d:/FicherosGrutinet/descargados/productos.csv");
+        textfield_DestinoGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_DestinoGlobalActionPerformed(evt);
+            }
+        });
+
+        textfield_EstructuraCampos.setText("http://media.grutinet.com/ficheros/estructura_campos.txt");
+
+        textfield_DestinoEstructuraCampos.setText("d:/FicherosGrutinet/descargados/campos_productos.csv");
+
+        button_descargarFicheroGlobal.setText("Descargar");
+        button_descargarFicheroGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_descargarFicheroGlobalActionPerformed(evt);
+            }
+        });
+
+        button_descargaCamposGlobal.setText("Descargar");
+        button_descargaCamposGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_descargaCamposGlobalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Panel2ProdGlobalLayout = new javax.swing.GroupLayout(Panel2ProdGlobal);
+        Panel2ProdGlobal.setLayout(Panel2ProdGlobalLayout);
+        Panel2ProdGlobalLayout.setHorizontalGroup(
+            Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fieldname_EstructuraCampos)
+                    .addComponent(fieldname_DestinoEstructuraCampos)
+                    .addComponent(fieldname_DestinoGlobal)
+                    .addComponent(fieldname_Global))
+                .addGap(18, 18, 18)
+                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_DestinoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textfield_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button_descargarFicheroGlobal))
+                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_EstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textfield_DestinoEstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(button_descargaCamposGlobal)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        Panel2ProdGlobalLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textfield_DestinoEstructuraCampos, textfield_DestinoGlobal, textfield_EstructuraCampos, textfield_Global});
+
+        Panel2ProdGlobalLayout.setVerticalGroup(
+            Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fieldname_Global)
+                            .addComponent(textfield_Global, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfield_DestinoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldname_DestinoGlobal)))
+                    .addComponent(button_descargarFicheroGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fieldname_EstructuraCampos)
+                            .addComponent(textfield_EstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
+                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fieldname_DestinoEstructuraCampos)
+                            .addComponent(textfield_DestinoEstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(button_descargaCamposGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Panel1ProdGlobalLayout = new javax.swing.GroupLayout(Panel1ProdGlobal);
+        Panel1ProdGlobal.setLayout(Panel1ProdGlobalLayout);
+        Panel1ProdGlobalLayout.setHorizontalGroup(
+            Panel1ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(title_seccion4))
+            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(Panel2ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        Panel1ProdGlobalLayout.setVerticalGroup(
+            Panel1ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(title_seccion4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Panel2ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButton4.setText("Recalcular Campos");
+
+        jButton6.setText("Grabar en BDD");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(143, 143, 143)
+                .addComponent(jButton6)
+                .addGap(209, 209, 209))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel1ProdGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel1ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButton4)
+                    .addComponent(jButton6))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Rutas a Ficheros", jPanel1);
+
+        title_seccion2.setText("Informacion General");
+
+        jLabel1.setText("Drivername");
+
+        textfield_driverName.setText("com.mysql.jdbc.Driver");
+
+        javax.swing.GroupLayout panel_info_GeneralLayout = new javax.swing.GroupLayout(panel_info_General);
+        panel_info_General.setLayout(panel_info_GeneralLayout);
+        panel_info_GeneralLayout.setHorizontalGroup(
+            panel_info_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_GeneralLayout.createSequentialGroup()
+                .addComponent(title_seccion2)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panel_info_GeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textfield_driverName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel_info_GeneralLayout.setVerticalGroup(
+            panel_info_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_GeneralLayout.createSequentialGroup()
+                .addComponent(title_seccion2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel_info_GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(textfield_driverName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 17, Short.MAX_VALUE))
+        );
+
+        title_seccion1.setText("Acceso a Base de Datos Local");
+
+        fieldname_url1.setText("URL Local");
+
+        textfield_urlBaseDatosLocal.setText("jdbc:mysql://localhost:3306/");
+
+        fieldname_dbName1.setText("Nombre BD");
+
+        textfield_NombreBaseDatosLocal.setText("catalogws");
+
+        fieldname_username1.setText("Usuario");
+
+        textfield_NombreUsuarioLocal.setText("root");
+
+        fieldname_password1.setText("Password");
+
+        textfield_PasswordUsuarioLocal.setText("root");
+
+        javax.swing.GroupLayout panel_info_LocalLayout = new javax.swing.GroupLayout(panel_info_Local);
+        panel_info_Local.setLayout(panel_info_LocalLayout);
+        panel_info_LocalLayout.setHorizontalGroup(
+            panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                .addComponent(title_seccion1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(fieldname_url1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldname_dbName1)
+                    .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(fieldname_username1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                        .addComponent(textfield_NombreUsuarioLocal, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(fieldname_password1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfield_PasswordUsuarioLocal, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textfield_NombreBaseDatosLocal)
+                    .addComponent(textfield_urlBaseDatosLocal))
+                .addContainerGap())
+        );
+        panel_info_LocalLayout.setVerticalGroup(
+            panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_LocalLayout.createSequentialGroup()
+                .addComponent(title_seccion1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldname_url1)
+                    .addComponent(textfield_urlBaseDatosLocal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldname_dbName1)
+                    .addComponent(textfield_NombreBaseDatosLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_PasswordUsuarioLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_password1))
+                    .addGroup(panel_info_LocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_username1)
+                        .addComponent(textfield_NombreUsuarioLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+
+        title_seccion3.setText("Acceso a Base de Datos Real");
+
+        fieldname_dbName2.setText("Nombre BD");
+
+        fieldname_url2.setText("URL Local");
+
+        textfield_url2.setText("mysql.loading.es");
+        textfield_url2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_url2ActionPerformed(evt);
+            }
+        });
+
+        textfield_dbName2.setText("catalogws");
+
+        fieldname_port2.setText("Puerto");
+
+        textfield_port2.setText("3360");
+
+        fieldname_username2.setText("Usuario");
+
+        textfield_username2.setText("mckyavelik");
+
+        fieldname_password2.setText("Password");
+
+        textfield_password2.setText("unk yet");
+
+        javax.swing.GroupLayout panel_info_websiteLayout = new javax.swing.GroupLayout(panel_info_website);
+        panel_info_website.setLayout(panel_info_websiteLayout);
+        panel_info_websiteLayout.setHorizontalGroup(
+            panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_websiteLayout.createSequentialGroup()
+                .addComponent(title_seccion3)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panel_info_websiteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fieldname_url2)
+                    .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_dbName2)
+                        .addComponent(fieldname_username2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_info_websiteLayout.createSequentialGroup()
+                        .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfield_dbName2)
+                            .addComponent(textfield_url2))
+                        .addGap(18, 18, 18)
+                        .addComponent(fieldname_port2))
+                    .addGroup(panel_info_websiteLayout.createSequentialGroup()
+                        .addComponent(textfield_username2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fieldname_password2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfield_password2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textfield_port2)
+                .addContainerGap())
+        );
+        panel_info_websiteLayout.setVerticalGroup(
+            panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_info_websiteLayout.createSequentialGroup()
+                .addComponent(title_seccion3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldname_url2)
+                    .addComponent(textfield_url2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_port2)
+                    .addComponent(textfield_port2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldname_dbName2)
+                    .addComponent(textfield_dbName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(panel_info_websiteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textfield_username2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_username2)
+                    .addComponent(textfield_password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldname_password2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButton1.setText("Recalcular Campos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Grabar en BDD");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panel_info_General, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(panel_info_Local, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(panel_info_website, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 317, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel_info_General, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel_info_Local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panel_info_website, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Datos Conexion a BBDD", jPanel2);
+
+        textfield_destinoStock.setText("c:\\FicherosGrutinet\\Stock.csv");
+        textfield_destinoStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoStockActionPerformed(evt);
+            }
+        });
+
+        textfield_destinoExpired.setText("c:\\FicherosGrutinet\\SinStock.csv");
+        textfield_destinoExpired.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoExpiredActionPerformed(evt);
+            }
+        });
+
+        fieldname_destinoStock.setText("Ruta Local Destino");
+
+        textfield_latest.setText("http://media.grutinet.com/ficheros/productos_csv_novedades.csv");
+        textfield_latest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_latestActionPerformed(evt);
+            }
+        });
+
+        textfield_stock.setText("http://media.grutinet.com/ficheros/productos_stock.csv");
+
+        fieldname_stock.setText("Stock Actual de Productos");
+
+        fieldname_latest.setText("Lista de Novedades");
+
+        fieldname_destinoLatest.setText("Ruta Local Destino");
+
+        fieldname_noStock.setText("Productos sin Stock");
+
+        textfield_destinoLatest.setText("c:\\FicherosGrutinet\\Novedades.csv");
+        textfield_destinoLatest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoLatestActionPerformed(evt);
+            }
+        });
+
+        textfield_noStock.setText("http://media.grutinet.com/ficheros/productos_csv_sin_stock.csv");
+
+        fieldname_destinoNoStock.setText("Ruta Local Destino");
+
+        textfield_destinoNoStock.setText("c:\\FicherosGrutinet\\SinStock.csv");
+        textfield_destinoNoStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoNoStockActionPerformed(evt);
+            }
+        });
+
+        fieldname_destinoOffers.setText("Ruta Local Destino");
+
+        fieldname_expired.setText("Productos Descatalogados");
+
+        textfield_destinoOffers.setText("c:\\FicherosGrutinet\\Ofertas.csv");
+        textfield_destinoOffers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_destinoOffersActionPerformed(evt);
+            }
+        });
+
+        textfield_expired.setText("http://media.grutinet.com/ficheros/productos_csv_descatalogados.csv");
+        textfield_expired.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_expiredActionPerformed(evt);
+            }
+        });
+
+        fieldname_offers.setText("Lista de Ofertas");
+
+        fieldname_destinoExpired.setText("Ruta Local Destino");
+
+        textfield_offers.setText("http://media.grutinet.com/ficheros/productos_csv_ofertas.csv");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 706, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(72, 72, 72)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(fieldname_destinoLatest, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_destinoOffers, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_destinoStock, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_destinoNoStock, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_destinoExpired, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_expired, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_noStock, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_stock, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_offers, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(fieldname_latest, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(textfield_noStock, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfield_stock, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfield_offers, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfield_expired, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                        .addComponent(textfield_latest, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfield_destinoLatest, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                        .addComponent(textfield_destinoOffers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                        .addComponent(textfield_destinoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                        .addComponent(textfield_destinoNoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+                        .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+                    .addContainerGap(73, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 512, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(101, 101, 101)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_latest)
+                        .addComponent(textfield_latest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_destinoLatest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_destinoLatest))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_offers)
+                        .addComponent(textfield_offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_destinoOffers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_destinoOffers))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_stock)
+                        .addComponent(textfield_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_destinoStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_destinoStock))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_noStock)
+                        .addComponent(textfield_noStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_destinoNoStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_destinoNoStock))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fieldname_expired)
+                        .addComponent(textfield_expired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldname_destinoExpired))
+                    .addContainerGap(109, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("tab3", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 282, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textfield_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_GlobalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_GlobalActionPerformed
+
+    private void textfield_DestinoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_DestinoGlobalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_DestinoGlobalActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void textfield_destinoStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoStockActionPerformed
+
+    private void textfield_destinoExpiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoExpiredActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoExpiredActionPerformed
+
+    private void textfield_latestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_latestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_latestActionPerformed
+
+    private void textfield_destinoLatestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoLatestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoLatestActionPerformed
+
+    private void textfield_destinoNoStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoNoStockActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoNoStockActionPerformed
+
+    private void textfield_destinoOffersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_destinoOffersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_destinoOffersActionPerformed
+
+    private void textfield_expiredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_expiredActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_expiredActionPerformed
+
+    private void textfield_url2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_url2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_url2ActionPerformed
+
+    private void button_descargarFicheroGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_descargarFicheroGlobalActionPerformed
+        int confirmado = JOptionPane.showConfirmDialog(null, "Confirmas la descarga del fichero?");
+        if (JOptionPane.OK_OPTION == confirmado)
+            DOWN.descargaFicheroGlobal();
+        else
+           JOptionPane.showMessageDialog(null, "Descarga cancelada.");
+    }//GEN-LAST:event_button_descargarFicheroGlobalActionPerformed
+
+    private void button_descargaCamposGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_descargaCamposGlobalActionPerformed
+        int confirmado = JOptionPane.showConfirmDialog(null, "Confirmas la descarga del fichero?");
+        if (JOptionPane.OK_OPTION == confirmado)
+            DOWN.descargaCamposGlobal();
+        else
+           JOptionPane.showMessageDialog(null, "Descarga cancelada.");
+    }//GEN-LAST:event_button_descargaCamposGlobalActionPerformed
+
+    public String getRutaGlobal() {
+        String rutaGlobal = textfield_Global.getText();
+        return rutaGlobal;
+    }
+    
+    public String getCamposGlobal() {
+        String rutaCamposGlobal = textfield_EstructuraCampos.getText();
+        return rutaCamposGlobal;
+    }
+    
+    public String getDestinoLocalGlobal() {
+        String destinoLocalGlobal = textfield_DestinoGlobal.getText();
+        return destinoLocalGlobal;
+    }
+    
+    public String getDestinoLocalCamposGlobal() {
+        String destinoLocalCamposGlobal = textfield_DestinoEstructuraCampos.getText();
+        return destinoLocalCamposGlobal;
+    }
+    
+    public String getDriverName() {
+        String driverName = textfield_driverName.getText();
+        return driverName;
+    }
+    
+    public String getURLBaseDatosLocal() {
+        String urlBaseDatosLocal = textfield_urlBaseDatosLocal.getText();
+        return urlBaseDatosLocal;
+    }
+    
+    public String getNombreBaseDatosLocal() {
+        String NombreBaseDatosLocal = textfield_NombreBaseDatosLocal.getText();
+        return NombreBaseDatosLocal;
+    }
+    
+    public String getNombreUsuarioLocal() {
+        String NombreUsuarioLocal = textfield_NombreUsuarioLocal.getText();
+        return NombreUsuarioLocal;
+    }
+    
+    public String getPasswordUsuarioLocal() {
+        String PasswordUsuarioLocal = textfield_PasswordUsuarioLocal.getText();
+        return PasswordUsuarioLocal;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel1ProdGlobal;
+    private javax.swing.JPanel Panel2ProdGlobal;
+    private javax.swing.JToggleButton button_descargaCamposGlobal;
+    private javax.swing.JToggleButton button_descargarFicheroGlobal;
+    private javax.swing.JLabel fieldname_DestinoEstructuraCampos;
+    private javax.swing.JLabel fieldname_DestinoGlobal;
+    private javax.swing.JLabel fieldname_EstructuraCampos;
+    private javax.swing.JLabel fieldname_Global;
+    private javax.swing.JLabel fieldname_dbName1;
+    private javax.swing.JLabel fieldname_dbName2;
+    private javax.swing.JLabel fieldname_destinoExpired;
+    private javax.swing.JLabel fieldname_destinoLatest;
+    private javax.swing.JLabel fieldname_destinoNoStock;
+    private javax.swing.JLabel fieldname_destinoOffers;
+    private javax.swing.JLabel fieldname_destinoStock;
+    private javax.swing.JLabel fieldname_expired;
+    private javax.swing.JLabel fieldname_latest;
+    private javax.swing.JLabel fieldname_noStock;
+    private javax.swing.JLabel fieldname_offers;
+    private javax.swing.JLabel fieldname_password1;
+    private javax.swing.JLabel fieldname_password2;
+    private javax.swing.JLabel fieldname_port2;
+    private javax.swing.JLabel fieldname_stock;
+    private javax.swing.JLabel fieldname_url1;
+    private javax.swing.JLabel fieldname_url2;
+    private javax.swing.JLabel fieldname_username1;
+    private javax.swing.JLabel fieldname_username2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel panel_info_General;
+    private javax.swing.JPanel panel_info_Local;
+    private javax.swing.JPanel panel_info_website;
+    private javax.swing.JTextField textfield_DestinoEstructuraCampos;
+    private javax.swing.JTextField textfield_DestinoGlobal;
+    private javax.swing.JTextField textfield_EstructuraCampos;
+    private javax.swing.JTextField textfield_Global;
+    private javax.swing.JTextField textfield_NombreBaseDatosLocal;
+    private javax.swing.JTextField textfield_NombreUsuarioLocal;
+    private javax.swing.JTextField textfield_PasswordUsuarioLocal;
+    private javax.swing.JTextField textfield_dbName2;
+    private javax.swing.JTextField textfield_destinoExpired;
+    private javax.swing.JTextField textfield_destinoLatest;
+    private javax.swing.JTextField textfield_destinoNoStock;
+    private javax.swing.JTextField textfield_destinoOffers;
+    private javax.swing.JTextField textfield_destinoStock;
+    private javax.swing.JTextField textfield_driverName;
+    private javax.swing.JTextField textfield_expired;
+    private javax.swing.JTextField textfield_latest;
+    private javax.swing.JTextField textfield_noStock;
+    private javax.swing.JTextField textfield_offers;
+    private javax.swing.JTextField textfield_password2;
+    private javax.swing.JTextField textfield_port2;
+    private javax.swing.JTextField textfield_stock;
+    private javax.swing.JTextField textfield_url2;
+    private javax.swing.JTextField textfield_urlBaseDatosLocal;
+    private javax.swing.JTextField textfield_username2;
+    private javax.swing.JLabel title_seccion1;
+    private javax.swing.JLabel title_seccion2;
+    private javax.swing.JLabel title_seccion3;
+    private javax.swing.JLabel title_seccion4;
     // End of variables declaration//GEN-END:variables
+
 }

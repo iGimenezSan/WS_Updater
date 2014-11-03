@@ -37,9 +37,9 @@ public class Utilidades {
         }
     }
 
-    void mostrarArrayProductos(ArrayList<ProductosGlobal> ListaProductos) {
+    public void mostrarArrayGlobal(ArrayList<ProductosGlobal> Lista) {
         
-        int size = ListaProductos.size();
+        int size = Lista.size();
         System.out.println("La lista contiene: " + size);
         
     }

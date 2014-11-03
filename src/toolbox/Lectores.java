@@ -6,29 +6,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import objetos.ProductosGlobal;
 
-/* 
- * @autor Isaac Giménez Sánchez
- */
 
-public class LecturaInputCSV {
-        
-
-    private Utilidades UTI = new Utilidades();
-    /* 
-     * Lee el fichero CSV y almacena los datos en "catalogWS.archivo_csv_parseado".
-     */
+public class Lectores {
     
-    public void leerProductosGlobal (String ruta) {
+    public ArrayList<ProductosGlobal> leerProductosGlobal (String ruta) {
+        
+        ArrayList<ProductosGlobal> ListaProductos = new ArrayList<ProductosGlobal>();
+        
         try {
             CsvReader lector = new CsvReader(ruta);
-            ArrayList<ProductosGlobal> ListaProductos = new ArrayList<ProductosGlobal>();
-            
-            // Especificación del delimitador
             lector.setDelimiter(',');
             
             // Recogida de los datos de cada linea
             while (lector.readRecord()) {
-            
                 String familia = lector.get(0);
                 String subfamilia = lector.get(1);
                 String codigo = lector.get(2);
@@ -67,15 +57,14 @@ public class LecturaInputCSV {
                 String hashtalla = lector.get(35);
                 
                 ListaProductos.add(new ProductosGlobal(familia, subfamilia, codigo, nombre, nombre_original, marca, descripcion_castellano, link, precio, precio_tarifa, stock, stock_disponible, reponer, talla, iva, imagen_gr, imagen_bu, imagen_or, imagen_grande_1, imagen_grande_2, imagen_grande_3, imagen_grande_4, imagen_grande_5, imagen_grande_6, imagen_grande_7, imagen_grande_8, imagen_grande_9, imagen_grande_10, ean, asociado_talla, descripcion_html, tarifa_basica, tarifa_preferente, tarifa_profesional, tarifa_premium, hashtalla));
-                
-                UTI.mostrarArrayProductos(ListaProductos);
-            
             }
         } catch (FileNotFoundException e) {
             System.out.println("Parece que no se encuentra el fichero.");
         } catch (IOException e) {
             System.out.println("Fallo desconocido en entrada/salida.");
         }
+
+        return ListaProductos;
     }
     
 }

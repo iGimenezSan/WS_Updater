@@ -1,4 +1,4 @@
-package conversor;
+package toolbox;
 
 import com.csvreader.CsvReader;
 import com.mysql.jdbc.Connection;
@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 public class ProcesadorBACKUP {
     
-//    private ConsultasBBDD SQL = new ConsultasBBDD();
+//    private ConectoresBDD SQL = new ConectoresBDD();
     
     /* 
      * Lee el fichero CSV y almacena los datos en "catalogWS.archivo_csv_parseado".
@@ -76,9 +76,9 @@ public class ProcesadorBACKUP {
                     Statement consulta = (Statement) c.createStatement();
                     consulta.execute(consultaFinal);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(ConsultasBBDD.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             lector.close();
