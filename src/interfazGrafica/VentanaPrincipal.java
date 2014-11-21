@@ -1,7 +1,5 @@
 package interfazGrafica;
 
-import java.util.ArrayList;
-import objetos.ProductosGlobal;
 import toolbox.Utilidades;
 import toolbox.Lectores;
 
@@ -16,7 +14,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-//        inicioSesion();
     }
 
     /**
@@ -29,6 +26,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuItemProductos = new javax.swing.JMenu();
@@ -37,6 +35,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuItemParametros = new javax.swing.JMenuItem();
 
         jMenu2.setText("jMenu2");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WS Updater Control Panel");
@@ -92,9 +92,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemProductosActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        ArrayList<ProductosGlobal> ListaProductos = LECT.leerProductosGlobal(PARAM.getDestinoLocalGlobal());
-        UTIL.mostrarArrayGlobal(ListaProductos);
-        
+        Actualizacion vent_Actualizacion = new Actualizacion();
+        Escritorio.add(vent_Actualizacion);
+        vent_Actualizacion.show();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void menuItemParametrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemParametrosActionPerformed
@@ -143,6 +143,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem menuItemParametros;
     private javax.swing.JMenu menuItemProductos;
     // End of variables declaration//GEN-END:variables

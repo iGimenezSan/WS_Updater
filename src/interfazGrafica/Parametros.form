@@ -30,7 +30,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jTabbedPane1" pref="485" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -39,234 +42,6 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Rutas a Ficheros">
-                <Property name="tabTitle" type="java.lang.String" value="Rutas a Ficheros"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="Panel1ProdGlobal" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Panel1ProdGlobal" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="294" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="jButton4" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="Panel1ProdGlobal">
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="title_seccion4" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="Panel2ProdGlobal" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="title_seccion4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="Panel2ProdGlobal" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="title_seccion4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Rutas a los ficheros CSV de descarga de datos"/>
-                  </Properties>
-                </Component>
-                <Container class="javax.swing.JPanel" name="Panel2ProdGlobal">
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="fieldname_EstructuraCampos" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="fieldname_DestinoEstructuraCampos" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="fieldname_DestinoGlobal" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="fieldname_Global" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="textfield_DestinoGlobal" linkSize="1" alignment="0" min="-2" pref="419" max="-2" attributes="0"/>
-                                          <Component id="textfield_Global" linkSize="1" alignment="0" min="-2" pref="301" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="button_descargarFicheroGlobal" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="textfield_EstructuraCampos" linkSize="1" alignment="0" min="-2" pref="419" max="-2" attributes="0"/>
-                                          <Component id="textfield_DestinoEstructuraCampos" linkSize="1" alignment="0" min="-2" pref="419" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="button_descargaCamposGlobal" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace pref="20" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="fieldname_Global" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textfield_Global" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="textfield_DestinoGlobal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="fieldname_DestinoGlobal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="button_descargarFicheroGlobal" alignment="1" min="-2" pref="49" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="fieldname_EstructuraCampos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textfield_EstructuraCampos" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="fieldname_DestinoEstructuraCampos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textfield_DestinoEstructuraCampos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="button_descargaCamposGlobal" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="javax.swing.JLabel" name="fieldname_Global">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Global"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="fieldname_DestinoGlobal">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Destino Local"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="fieldname_EstructuraCampos">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Estructura Campos"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="fieldname_DestinoEstructuraCampos">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Destino Local"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="textfield_Global">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/productos_sin_dvd.csv"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_GlobalActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="textfield_DestinoGlobal">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="d:/FicherosGrutinet/descargados/productos.csv"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_DestinoGlobalActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="textfield_EstructuraCampos">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="http://media.grutinet.com/ficheros/estructura_campos.txt"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="textfield_DestinoEstructuraCampos">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="d:/FicherosGrutinet/descargados/campos_productos.csv"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JToggleButton" name="button_descargarFicheroGlobal">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Descargar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_descargarFicheroGlobalActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JToggleButton" name="button_descargaCamposGlobal">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Descargar"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_descargaCamposGlobalActionPerformed"/>
-                      </Events>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="jButton4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Recalcular Campos"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Grabar en BDD"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -293,7 +68,7 @@
                                   </Group>
                                   <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="317" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="370" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -315,7 +90,7 @@
                       <Component id="panel_info_website" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="85" max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -667,6 +442,235 @@
             </Component>
           </SubComponents>
         </Container>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Rutas a Ficheros">
+                <Property name="tabTitle" type="java.lang.String" value="Rutas a Ficheros"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTabbedPane3" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTabbedPane3" pref="435" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JTabbedPane" name="jTabbedPane3">
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTabbedPane3FocusGained"/>
+              </Events>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="jPanel5">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Fichero Global">
+                        <Property name="tabTitle" type="java.lang.String" value="Fichero Global"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Panel2ProdGlobal2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Panel2ProdGlobal2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="117" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="Panel2ProdGlobal2">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="fieldname_DestinoEstructuraCampos2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fieldname_EstructuraCampos2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fieldname_DestinoGlobal2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fieldname_Global2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="button_Mostrar_Global" linkSize="5" min="-2" pref="140" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="button_Guardar_Global" linkSize="5" min="-2" pref="140" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="textfield_CamposGlobal_Destino" linkSize="4" alignment="0" min="-2" pref="360" max="-2" attributes="0"/>
+                                          <Component id="textfield_CamposGlobal_URL" linkSize="4" alignment="0" min="-2" pref="365" max="-2" attributes="0"/>
+                                          <Component id="textfield_Global_Destino" linkSize="4" alignment="0" min="-2" pref="365" max="-2" attributes="0"/>
+                                          <Component id="textfield_Global_URL" linkSize="4" alignment="0" min="-2" pref="360" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="button_Descargar_Campos_Global" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="button_Descargar_Global" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textfield_Global_URL" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="fieldname_Global2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textfield_Global_Destino" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="fieldname_DestinoGlobal2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="textfield_CamposGlobal_URL" linkSize="3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                              <Component id="fieldname_EstructuraCampos2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="fieldname_DestinoEstructuraCampos2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="textfield_CamposGlobal_Destino" linkSize="3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="button_Descargar_Global" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="button_Descargar_Campos_Global" min="-2" pref="71" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="button_Guardar_Global" pref="58" max="32767" attributes="0"/>
+                                      <Component id="button_Mostrar_Global" pref="58" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="fieldname_Global2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Global"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="fieldname_DestinoGlobal2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Destino Local"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="fieldname_EstructuraCampos2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Estructura Campos"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="fieldname_DestinoEstructuraCampos2">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Destino Local"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="textfield_Global_URL">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_Global_URLActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="textfield_Global_Destino">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_Global_DestinoActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="textfield_CamposGlobal_URL">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="textfield_CamposGlobal_Destino">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textfield_CamposGlobal_DestinoActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JToggleButton" name="button_Descargar_Global">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="2" name="D:\WS_Updater\src\imgs\down.gif"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Descargar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_Descargar_GlobalActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JToggleButton" name="button_Descargar_Campos_Global">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="2" name="D:\WS_Updater\src\imgs\down.gif"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Descargar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_Descargar_Campos_GlobalActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="button_Guardar_Global">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Guardar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_Guardar_GlobalActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="button_Mostrar_Global">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Mostrar"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_Mostrar_GlobalActionPerformed"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -679,7 +683,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="706" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="759" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
@@ -708,14 +712,14 @@
                               <Component id="textfield_destinoNoStock" alignment="0" pref="430" max="32767" attributes="0"/>
                               <Component id="textfield_destinoExpired" alignment="0" pref="430" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="73" max="32767" attributes="0"/>
+                          <EmptySpace pref="126" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="512" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="457" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
@@ -768,7 +772,7 @@
                               <Component id="textfield_destinoExpired" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="fieldname_destinoExpired" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="109" max="32767" attributes="0"/>
+                          <EmptySpace pref="54" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

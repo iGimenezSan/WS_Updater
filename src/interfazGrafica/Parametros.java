@@ -1,8 +1,9 @@
 package interfazGrafica;
 
 import javax.swing.JOptionPane;
-
+import toolbox.ConectoresBDD;
 import toolbox.Descargadores;
+import toolbox.Utilidades;
 
 /**
  *
@@ -10,7 +11,9 @@ import toolbox.Descargadores;
  */
 public class Parametros extends javax.swing.JInternalFrame {
     
-    public static Descargadores DOWN = new Descargadores();
+    private static final Descargadores DOWN = new Descargadores();
+    private static final ConectoresBDD BBDD = new ConectoresBDD();
+    private static final Utilidades UTIL = new Utilidades();
     
     /**
      * Creates new form Parametros
@@ -29,22 +32,6 @@ public class Parametros extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        Panel1ProdGlobal = new javax.swing.JPanel();
-        title_seccion4 = new javax.swing.JLabel();
-        Panel2ProdGlobal = new javax.swing.JPanel();
-        fieldname_Global = new javax.swing.JLabel();
-        fieldname_DestinoGlobal = new javax.swing.JLabel();
-        fieldname_EstructuraCampos = new javax.swing.JLabel();
-        fieldname_DestinoEstructuraCampos = new javax.swing.JLabel();
-        textfield_Global = new javax.swing.JTextField();
-        textfield_DestinoGlobal = new javax.swing.JTextField();
-        textfield_EstructuraCampos = new javax.swing.JTextField();
-        textfield_DestinoEstructuraCampos = new javax.swing.JTextField();
-        button_descargarFicheroGlobal = new javax.swing.JToggleButton();
-        button_descargaCamposGlobal = new javax.swing.JToggleButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         panel_info_General = new javax.swing.JPanel();
         title_seccion2 = new javax.swing.JLabel();
@@ -77,6 +64,22 @@ public class Parametros extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        Panel2ProdGlobal2 = new javax.swing.JPanel();
+        fieldname_Global2 = new javax.swing.JLabel();
+        fieldname_DestinoGlobal2 = new javax.swing.JLabel();
+        fieldname_EstructuraCampos2 = new javax.swing.JLabel();
+        fieldname_DestinoEstructuraCampos2 = new javax.swing.JLabel();
+        textfield_Global_URL = new javax.swing.JTextField();
+        textfield_Global_Destino = new javax.swing.JTextField();
+        textfield_CamposGlobal_URL = new javax.swing.JTextField();
+        textfield_CamposGlobal_Destino = new javax.swing.JTextField();
+        button_Descargar_Global = new javax.swing.JToggleButton();
+        button_Descargar_Campos_Global = new javax.swing.JToggleButton();
+        button_Guardar_Global = new javax.swing.JButton();
+        button_Mostrar_Global = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         textfield_destinoStock = new javax.swing.JTextField();
         textfield_destinoExpired = new javax.swing.JTextField();
@@ -103,160 +106,6 @@ public class Parametros extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Parametros");
-
-        title_seccion4.setText("Rutas a los ficheros CSV de descarga de datos");
-
-        fieldname_Global.setText("Global");
-
-        fieldname_DestinoGlobal.setText("Destino Local");
-
-        fieldname_EstructuraCampos.setText("Estructura Campos");
-
-        fieldname_DestinoEstructuraCampos.setText("Destino Local");
-
-        textfield_Global.setText("http://media.grutinet.com/ficheros/productos_sin_dvd.csv");
-        textfield_Global.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfield_GlobalActionPerformed(evt);
-            }
-        });
-
-        textfield_DestinoGlobal.setText("d:/FicherosGrutinet/descargados/productos.csv");
-        textfield_DestinoGlobal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textfield_DestinoGlobalActionPerformed(evt);
-            }
-        });
-
-        textfield_EstructuraCampos.setText("http://media.grutinet.com/ficheros/estructura_campos.txt");
-
-        textfield_DestinoEstructuraCampos.setText("d:/FicherosGrutinet/descargados/campos_productos.csv");
-
-        button_descargarFicheroGlobal.setText("Descargar");
-        button_descargarFicheroGlobal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_descargarFicheroGlobalActionPerformed(evt);
-            }
-        });
-
-        button_descargaCamposGlobal.setText("Descargar");
-        button_descargaCamposGlobal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_descargaCamposGlobalActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Panel2ProdGlobalLayout = new javax.swing.GroupLayout(Panel2ProdGlobal);
-        Panel2ProdGlobal.setLayout(Panel2ProdGlobalLayout);
-        Panel2ProdGlobalLayout.setHorizontalGroup(
-            Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(fieldname_EstructuraCampos)
-                    .addComponent(fieldname_DestinoEstructuraCampos)
-                    .addComponent(fieldname_DestinoGlobal)
-                    .addComponent(fieldname_Global))
-                .addGap(18, 18, 18)
-                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfield_DestinoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textfield_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button_descargarFicheroGlobal))
-                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textfield_EstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textfield_DestinoEstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button_descargaCamposGlobal)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        Panel2ProdGlobalLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textfield_DestinoEstructuraCampos, textfield_DestinoGlobal, textfield_EstructuraCampos, textfield_Global});
-
-        Panel2ProdGlobalLayout.setVerticalGroup(
-            Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2ProdGlobalLayout.createSequentialGroup()
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldname_Global)
-                            .addComponent(textfield_Global, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textfield_DestinoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fieldname_DestinoGlobal)))
-                    .addComponent(button_descargarFicheroGlobal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Panel2ProdGlobalLayout.createSequentialGroup()
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldname_EstructuraCampos)
-                            .addComponent(textfield_EstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(Panel2ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(fieldname_DestinoEstructuraCampos)
-                            .addComponent(textfield_DestinoEstructuraCampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(button_descargaCamposGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout Panel1ProdGlobalLayout = new javax.swing.GroupLayout(Panel1ProdGlobal);
-        Panel1ProdGlobal.setLayout(Panel1ProdGlobalLayout);
-        Panel1ProdGlobalLayout.setHorizontalGroup(
-            Panel1ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title_seccion4))
-            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(Panel2ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        Panel1ProdGlobalLayout.setVerticalGroup(
-            Panel1ProdGlobalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel1ProdGlobalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title_seccion4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Panel2ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jButton4.setText("Recalcular Campos");
-
-        jButton6.setText("Grabar en BDD");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(143, 143, 143)
-                .addComponent(jButton6)
-                .addGap(209, 209, 209))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Panel1ProdGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Panel1ProdGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 294, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Rutas a Ficheros", jPanel1);
 
         title_seccion2.setText("Informacion General");
 
@@ -487,7 +336,7 @@ public class Parametros extends javax.swing.JInternalFrame {
                                 .addComponent(panel_info_Local, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(panel_info_website, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 317, Short.MAX_VALUE)))
+                        .addGap(0, 370, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -505,10 +354,177 @@ public class Parametros extends javax.swing.JInternalFrame {
                 .addComponent(panel_info_website, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Datos Conexion a BBDD", jPanel2);
+
+        jTabbedPane3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTabbedPane3FocusGained(evt);
+            }
+        });
+
+        fieldname_Global2.setText("Global");
+
+        fieldname_DestinoGlobal2.setText("Destino Local");
+
+        fieldname_EstructuraCampos2.setText("Estructura Campos");
+
+        fieldname_DestinoEstructuraCampos2.setText("Destino Local");
+
+        textfield_Global_URL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_Global_URLActionPerformed(evt);
+            }
+        });
+
+        textfield_Global_Destino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_Global_DestinoActionPerformed(evt);
+            }
+        });
+
+        textfield_CamposGlobal_Destino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textfield_CamposGlobal_DestinoActionPerformed(evt);
+            }
+        });
+
+        button_Descargar_Global.setIcon(new javax.swing.ImageIcon("D:\\WS_Updater\\src\\imgs\\down.gif")); // NOI18N
+        button_Descargar_Global.setText("Descargar");
+        button_Descargar_Global.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_Descargar_GlobalActionPerformed(evt);
+            }
+        });
+
+        button_Descargar_Campos_Global.setIcon(new javax.swing.ImageIcon("D:\\WS_Updater\\src\\imgs\\down.gif")); // NOI18N
+        button_Descargar_Campos_Global.setText("Descargar");
+        button_Descargar_Campos_Global.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_Descargar_Campos_GlobalActionPerformed(evt);
+            }
+        });
+
+        button_Guardar_Global.setText("Guardar");
+        button_Guardar_Global.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_Guardar_GlobalActionPerformed(evt);
+            }
+        });
+
+        button_Mostrar_Global.setText("Mostrar");
+        button_Mostrar_Global.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_Mostrar_GlobalActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Panel2ProdGlobal2Layout = new javax.swing.GroupLayout(Panel2ProdGlobal2);
+        Panel2ProdGlobal2.setLayout(Panel2ProdGlobal2Layout);
+        Panel2ProdGlobal2Layout.setHorizontalGroup(
+            Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel2ProdGlobal2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fieldname_DestinoEstructuraCampos2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fieldname_EstructuraCampos2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fieldname_DestinoGlobal2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fieldname_Global2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(Panel2ProdGlobal2Layout.createSequentialGroup()
+                        .addComponent(button_Mostrar_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(button_Guardar_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(textfield_CamposGlobal_Destino, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textfield_CamposGlobal_URL, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textfield_Global_Destino, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textfield_Global_URL, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(button_Descargar_Campos_Global, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button_Descargar_Global, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        Panel2ProdGlobal2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {textfield_CamposGlobal_Destino, textfield_CamposGlobal_URL, textfield_Global_Destino, textfield_Global_URL});
+
+        Panel2ProdGlobal2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {button_Guardar_Global, button_Mostrar_Global});
+
+        Panel2ProdGlobal2Layout.setVerticalGroup(
+            Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel2ProdGlobal2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel2ProdGlobal2Layout.createSequentialGroup()
+                        .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfield_Global_URL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldname_Global2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfield_Global_Destino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldname_DestinoGlobal2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfield_CamposGlobal_URL, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fieldname_EstructuraCampos2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fieldname_DestinoEstructuraCampos2)
+                            .addComponent(textfield_CamposGlobal_Destino, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel2ProdGlobal2Layout.createSequentialGroup()
+                        .addComponent(button_Descargar_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(button_Descargar_Campos_Global, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(Panel2ProdGlobal2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(button_Guardar_Global, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                    .addComponent(button_Mostrar_Global, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        Panel2ProdGlobal2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {textfield_CamposGlobal_Destino, textfield_CamposGlobal_URL, textfield_Global_Destino, textfield_Global_URL});
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel2ProdGlobal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Panel2ProdGlobal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Fichero Global", jPanel5);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Rutas a Ficheros", jPanel1);
 
         textfield_destinoStock.setText("c:\\FicherosGrutinet\\Stock.csv");
         textfield_destinoStock.addActionListener(new java.awt.event.ActionListener() {
@@ -589,7 +605,7 @@ public class Parametros extends javax.swing.JInternalFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 759, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(72, 72, 72)
@@ -616,11 +632,11 @@ public class Parametros extends javax.swing.JInternalFrame {
                         .addComponent(textfield_destinoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                         .addComponent(textfield_destinoNoStock, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                         .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
-                    .addContainerGap(73, Short.MAX_VALUE)))
+                    .addContainerGap(126, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 512, Short.MAX_VALUE)
+            .addGap(0, 453, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(101, 101, 101)
@@ -663,7 +679,7 @@ public class Parametros extends javax.swing.JInternalFrame {
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textfield_destinoExpired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(fieldname_destinoExpired))
-                    .addContainerGap(109, Short.MAX_VALUE)))
+                    .addContainerGap(50, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("tab3", jPanel4);
@@ -676,19 +692,13 @@ public class Parametros extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void textfield_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_GlobalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfield_GlobalActionPerformed
-
-    private void textfield_DestinoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_DestinoGlobalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textfield_DestinoGlobalActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -726,39 +736,55 @@ public class Parametros extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textfield_url2ActionPerformed
 
-    private void button_descargarFicheroGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_descargarFicheroGlobalActionPerformed
-        int confirmado = JOptionPane.showConfirmDialog(null, "Confirmas la descarga del fichero?");
-        if (JOptionPane.OK_OPTION == confirmado)
-            DOWN.descargaFicheroGlobal();
-        else
-           JOptionPane.showMessageDialog(null, "Descarga cancelada.");
-    }//GEN-LAST:event_button_descargarFicheroGlobalActionPerformed
+    private void button_Guardar_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_Guardar_GlobalActionPerformed
+        BBDD.actualizarDatosGlobalEnBaseDatos(recogerDatos());
+    }//GEN-LAST:event_button_Guardar_GlobalActionPerformed
 
-    private void button_descargaCamposGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_descargaCamposGlobalActionPerformed
-        int confirmado = JOptionPane.showConfirmDialog(null, "Confirmas la descarga del fichero?");
-        if (JOptionPane.OK_OPTION == confirmado)
-            DOWN.descargaCamposGlobal();
-        else
-           JOptionPane.showMessageDialog(null, "Descarga cancelada.");
-    }//GEN-LAST:event_button_descargaCamposGlobalActionPerformed
+    private void button_Descargar_Campos_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_Descargar_Campos_GlobalActionPerformed
+        DOWN.descargaCamposGlobal();
+    }//GEN-LAST:event_button_Descargar_Campos_GlobalActionPerformed
 
-    public String getRutaGlobal() {
-        String rutaGlobal = textfield_Global.getText();
+    private void button_Descargar_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_Descargar_GlobalActionPerformed
+        DOWN.descargaGlobal();
+    }//GEN-LAST:event_button_Descargar_GlobalActionPerformed
+
+    private void textfield_CamposGlobal_DestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_CamposGlobal_DestinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_CamposGlobal_DestinoActionPerformed
+
+    private void textfield_Global_DestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_Global_DestinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_Global_DestinoActionPerformed
+
+    private void textfield_Global_URLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfield_Global_URLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textfield_Global_URLActionPerformed
+
+    private void button_Mostrar_GlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_Mostrar_GlobalActionPerformed
+        mostrarDatosGlobal(BBDD.cargarDatosGlobalDesdeBaseDatos());
+    }//GEN-LAST:event_button_Mostrar_GlobalActionPerformed
+
+    private void jTabbedPane3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTabbedPane3FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane3FocusGained
+    
+    public String getURLGlobal() {
+        String rutaGlobal = textfield_Global_URL.getText();
         return rutaGlobal;
     }
     
-    public String getCamposGlobal() {
-        String rutaCamposGlobal = textfield_EstructuraCampos.getText();
+    public String getURLCamposGlobal() {
+        String rutaCamposGlobal = textfield_CamposGlobal_URL.getText();
         return rutaCamposGlobal;
     }
     
     public String getDestinoLocalGlobal() {
-        String destinoLocalGlobal = textfield_DestinoGlobal.getText();
+        String destinoLocalGlobal = textfield_Global_Destino.getText();
         return destinoLocalGlobal;
     }
     
     public String getDestinoLocalCamposGlobal() {
-        String destinoLocalCamposGlobal = textfield_DestinoEstructuraCampos.getText();
+        String destinoLocalCamposGlobal = textfield_CamposGlobal_Destino.getText();
         return destinoLocalCamposGlobal;
     }
     
@@ -787,15 +813,50 @@ public class Parametros extends javax.swing.JInternalFrame {
         return PasswordUsuarioLocal;
     }
     
+    public void setRutaGlobal(String valorRutaGlobal) {
+        textfield_Global_URL.setText(valorRutaGlobal);
+    }
+    
+    public void setDestinoGlobal (String valorDestinoGlobal) {
+        textfield_Global_Destino.setText(valorDestinoGlobal);
+    }
+    
+    public void setRutaCampos (String valorRutaCampos) {
+        textfield_CamposGlobal_URL.setText(valorRutaCampos);
+    }
+    
+    public void setDestinoCampos (String valorDestinoCampos) {
+        textfield_CamposGlobal_Destino.setText(valorDestinoCampos);
+    }
+    
+    public final void mostrarDatosGlobal(String[] valores) {
+        setRutaGlobal(valores[0]);
+        setDestinoGlobal(valores[1]);
+        setRutaCampos(valores[2]);
+        setDestinoCampos(valores[3]);
+    }
+    
+    private String[] recogerDatos() {
+        String[] valores = new String[4];
+        
+        valores [0] = getURLGlobal();
+        valores [1] = getDestinoLocalGlobal();
+        valores [2] = getURLCamposGlobal();
+        valores [3] = getDestinoLocalCamposGlobal();
+        
+        return valores;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Panel1ProdGlobal;
-    private javax.swing.JPanel Panel2ProdGlobal;
-    private javax.swing.JToggleButton button_descargaCamposGlobal;
-    private javax.swing.JToggleButton button_descargarFicheroGlobal;
-    private javax.swing.JLabel fieldname_DestinoEstructuraCampos;
-    private javax.swing.JLabel fieldname_DestinoGlobal;
-    private javax.swing.JLabel fieldname_EstructuraCampos;
-    private javax.swing.JLabel fieldname_Global;
+    private javax.swing.JPanel Panel2ProdGlobal2;
+    private javax.swing.JToggleButton button_Descargar_Campos_Global;
+    private javax.swing.JToggleButton button_Descargar_Global;
+    private javax.swing.JButton button_Guardar_Global;
+    private javax.swing.JButton button_Mostrar_Global;
+    private javax.swing.JLabel fieldname_DestinoEstructuraCampos2;
+    private javax.swing.JLabel fieldname_DestinoGlobal2;
+    private javax.swing.JLabel fieldname_EstructuraCampos2;
+    private javax.swing.JLabel fieldname_Global2;
     private javax.swing.JLabel fieldname_dbName1;
     private javax.swing.JLabel fieldname_dbName2;
     private javax.swing.JLabel fieldname_destinoExpired;
@@ -817,23 +878,23 @@ public class Parametros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel fieldname_username2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JPanel panel_info_General;
     private javax.swing.JPanel panel_info_Local;
     private javax.swing.JPanel panel_info_website;
-    private javax.swing.JTextField textfield_DestinoEstructuraCampos;
-    private javax.swing.JTextField textfield_DestinoGlobal;
-    private javax.swing.JTextField textfield_EstructuraCampos;
-    private javax.swing.JTextField textfield_Global;
+    private javax.swing.JTextField textfield_CamposGlobal_Destino;
+    private javax.swing.JTextField textfield_CamposGlobal_URL;
+    private javax.swing.JTextField textfield_Global_Destino;
+    private javax.swing.JTextField textfield_Global_URL;
     private javax.swing.JTextField textfield_NombreBaseDatosLocal;
     private javax.swing.JTextField textfield_NombreUsuarioLocal;
     private javax.swing.JTextField textfield_PasswordUsuarioLocal;
@@ -857,7 +918,8 @@ public class Parametros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel title_seccion1;
     private javax.swing.JLabel title_seccion2;
     private javax.swing.JLabel title_seccion3;
-    private javax.swing.JLabel title_seccion4;
     // End of variables declaration//GEN-END:variables
+
+
 
 }

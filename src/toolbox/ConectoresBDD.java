@@ -16,7 +16,7 @@ import interfazGrafica.Parametros;
 
 public class ConectoresBDD {
     
-    public static Parametros PARAM = new Parametros();
+    private static final Parametros PARAM = new Parametros();
     
         static String Nombre_Driver = PARAM.getDriverName();
         static String urlBaseDatosLocal = PARAM.getURLBaseDatosLocal();
@@ -26,6 +26,68 @@ public class ConectoresBDD {
         static String PasswordUsuarioLocal = PARAM.getPasswordUsuarioLocal();
 
 
+    public String getRutaGlobal() {
+        String rutaGlobal = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "root", "root");
+            Statement consultador = (Statement) c.createStatement();
+            ResultSet resultadoConsulta = consultador.executeQuery( "SELECT valor1 " +
+                                                                    "FROM updater_parametros " +
+                                                                    "WHERE nombreRegistro = \"Global;\"");
+            
+            while (resultadoConsulta.next()) {
+                rutaGlobal = resultadoConsulta.getString("valor1");
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Hubo un error con los comandos SQL consultando los datos del Fichero Global: " + ex);
+            return null;
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+            return null;
+        }
+        return rutaGlobal;
+    }   
+        
+    public void actualizarDatosGlobalEnBaseDatos(String[] valores) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "root", "root");
+            Statement consultador = (Statement) c.createStatement();
+            consultador.executeUpdate("UPDATE updater_parametros SET valor0 = \'" + valores[0] + "\', valor1 = \'" + valores[1] + "\', valor2 = \'" + valores[2] + "\', valor3 = \'" + valores[3] + "\' WHERE nombreRegistro = \'Global\'");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+        }
+    }
+        
+    public String[] cargarDatosGlobalDesdeBaseDatos() {
+        String[] valores = new String[5];
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection c = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/catalogws", "root", "root");
+            Statement consultador = (Statement) c.createStatement();
+            ResultSet resultadoConsulta = consultador.executeQuery("SELECT * FROM updater_parametros WHERE nombreRegistro = \'Global\';");
+            
+            while (resultadoConsulta.next()) {
+                valores[0] = resultadoConsulta.getString("valor0");
+                valores[1] = resultadoConsulta.getString("valor1");
+                valores[2] = resultadoConsulta.getString("valor2");
+                valores[3] = resultadoConsulta.getString("valor3");
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Hubo un error con los comandos SQL consultando los datos del Fichero Global: " + ex);
+            return null;
+        } catch (ClassNotFoundException ex2) {
+            System.out.println("No se pudo cargar el driver: " + ex2);
+            return null;
+        }
+        return valores;
+    }
     
     
     ////////////////////////////////////
@@ -34,20 +96,6 @@ public class ConectoresBDD {
     //////                      ////////
     ////////////////////////////////////
     
-//    public void consultaPrueba () {
-//        
-//        try {
-//            Class.forName(driverName);
-//            Connection c = (Connection) DriverManager.getConnection(url+dbName, userName, password);
-//            Statement insert = c.createStatement();
-//            insert.executeUpdate("INSERT INTO updater_rutas_ficheros (nombre_fichero, url_descarga, rutaLocal_destino) VALUES (" + nombre + ", " + url + ", " + ruta + ")");
-//                    ResultSet resultado = consulta.executeQuery("SELECT * FROM panel_control_usuarios WHERE id_usuario = '1'");
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(ConectoresBDD.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
 
     public boolean mirarSiExisteEnTablaRelaciones (String modeloBuscado) {
         try {
