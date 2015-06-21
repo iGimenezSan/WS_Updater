@@ -11,7 +11,30 @@ import objetos.ProductosGlobal;
  */
 
 public class Utilidades {
+    
+    public static Lectores LECT = new Lectores();
+    public static Parametros PARAM = new Parametros();
+  
+    // Metodo libreria para validar la estructura del fichero global
+    public boolean validarEstructura (int fichero, int tablaEnBDD) {
+        boolean validacion;
+        
+        if (fichero == tablaEnBDD) { 
+            validacion = true; 
+        } else { 
+            validacion = false; 
+        }
 
+        return validacion;
+    }
+    
+        
+    ///////////////////////////////
+    //
+    //  Contenido Antiguo
+    //
+    ///////////////////////////////
+    
     // Metodo libreria para mostrar el contenido de un ArrayList de Objetos
     public void iterarListaObjetos(ArrayList lista) { 
         Iterator iterator = lista.iterator();
@@ -20,28 +43,7 @@ public class Utilidades {
             System.out.println( iterator.next() );
         }
     }
-    
-    // Metodo libreria para mostrar arrays de Object
-    public void mostrarArrayObj(Object[] array){
-        System.out.println("El contenido del array es: ");
-        for (int i = 0; i < array.length; i++){
-            System.out.println(array[i]);
-        }
-    }
-    
-    // Metodo libreria para mostrar arrays de String
-    public void mostrarArrayStr(String[] array){
-        System.out.println("El contenido del array es: ");
-        for (int i = 0; i < array.length; i++){
-            System.out.println(array[i]);
-        }
-    }
 
-    public void mostrarArrayGlobal(ArrayList<ProductosGlobal> Lista) {
-        
-        int size = Lista.size();
-        System.out.println("La lista contiene: " + size);
-        
-    }
+
     
 }

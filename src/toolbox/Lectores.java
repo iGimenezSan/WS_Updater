@@ -1,13 +1,49 @@
 package toolbox;
 
 import com.csvreader.CsvReader;
+import com.csvreader.CsvWriter;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import objetos.ProductoParaImportar;
 import objetos.ProductosGlobal;
 
 
 public class Lectores {
+    
+    public static Utilidades UTIL = new Utilidades();
+    public static Conectores CON = new Conectores();
+    public static Parametros PARAM = new Parametros();
+    public static Procesadores PROC = new Procesadores();
+    
+    public void validarEstructuraGlobal (String ruta)  {
+        
+        try {
+            Scanner lector = new Scanner(new File(ruta));
+            String cadena = lector.nextLine();
+            
+            StringTokenizer st = new StringTokenizer(cadena, ",", false);
+            if (UTIL.validarEstructura(st.countTokens(), CON.obtenerCantidadColumnas())) {
+                JOptionPane.showMessageDialog(null, "Validación Correcta");
+            } else {
+                JOptionPane.showMessageDialog(null, "Validación Incorrecta");    
+            }
+            
+        } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Fallo de I/O en el fichero de CamposGlobal");
+        }
+        
+    }
     
     public ArrayList<ProductosGlobal> leerProductosGlobal (String ruta) {
         
@@ -63,8 +99,102 @@ public class Lectores {
         } catch (IOException e) {
             System.out.println("Fallo desconocido en entrada/salida.");
         }
-
         return ListaProductos;
+    }
+
+    public void escribirProductosParaImportar(ArrayList<ProductoParaImportar> listaDeRegistros) throws IOException {
+        
+        String fichero = PARAM.getRutaLocal_ProductosParaImportar();
+        CsvWriter salida = new CsvWriter(new FileWriter(fichero, true), ',');
+        
+//        for (int contador = 0; contador < 10023; contador++) {
+        Iterator it = listaDeRegistros.iterator();
+        int contador = 0;
+            if (it.hasNext()) {
+//                ProductoParaImportar registro = listaDeRegistros.get(contador);
+            
+                Bucle1:
+                while (it.hasNext()) {
+                    ProductoParaImportar registro = (ProductoParaImportar) it.next();
+                    try {
+                        salida.write(registro.getModel());
+                        salida.write(registro.getName());
+                        salida.write(registro.getInOutStock());
+                        salida.write(registro.getProductPrice());
+                        salida.write(registro.getQuantity());
+                        salida.write(registro.getCreationDate());
+                        salida.write(registro.getLastModification());
+                        salida.write(registro.getDateAvailable());
+                        salida.write(registro.getManufacturerName());
+                        salida.write(registro.getCategoriesName());
+                        salida.write(registro.getDescription());
+                        salida.write(registro.getProductImage());
+                        salida.write(registro.getCategoriesImage());
+                        salida.write(registro.getProductAttributes());
+                        salida.write(registro.getTaxClassName());
+                        salida.write(registro.getProductsViewed());
+                        salida.endRecord();
+                        contador++;
+                
+                        if (contador == listaDeRegistros.size()) {
+                            salida.flush();
+                            salida.close();
+                            break Bucle1;
+                        }
+                    } catch (IOException e) {
+                    }
+                }
+            }
+    }
+
+    public long contarLineasFicheroCSV (String ruta) {
+        long lNumeroLineas = 0;        
+        try {
+            String sCadena;
+            FileReader fr = new FileReader(ruta);
+            BufferedReader bf = new BufferedReader(fr);
+ 
+            while ((sCadena = bf.readLine())!=null) {
+              lNumeroLineas++;
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Lectores.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lectores.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lNumeroLineas;
+    }
+
+    public void procesarImagenesParaDescarga(String[] setDeImagenes) {
+        String rutaBase = "productos/";
+        String rutaProducto = setDeImagenes[13] + "/" + setDeImagenes[14] + "/";
+        String nombreProducto = setDeImagenes[12];
+        String extension = ".jpg";
+        
+        // Asegura que el directorio destino existe o lo crea
+        String rutaAlDirectorio = PARAM.getRutaLocal_Imagenes() + rutaBase + rutaProducto;
+        File directorio = new File(rutaAlDirectorio);
+        if (!directorio.exists()){
+            directorio.mkdirs();
+        }
+        
+        // Prepara el nombre del producto para ponerlo como nombre de imagen
+        nombreProducto = PROC.formato_TextoSinEspacios(nombreProducto);
+        nombreProducto = PROC.formato_TextoSinEspacios(nombreProducto);
+        nombreProducto = PROC.formato_TextoSinAsteriscos(nombreProducto);
+        nombreProducto = PROC.formato_TextoSinBarras(nombreProducto);
+        nombreProducto = PROC.formato_TextoSinSignos(nombreProducto);
+        
+        // Completa la ruta local del fichero para pasarla a descarga
+        String rutaLocalCompleta = rutaAlDirectorio + nombreProducto + extension;
+            
+        // Procesa las imágenes para descarga y las ubica en
+        //  el directorio local
+        for (int contador = 0; contador <= 10; contador++) {
+            if (!"Sin Imagen".equals(setDeImagenes[contador])) {
+                PARAM.descargarImagen(setDeImagenes[contador], rutaLocalCompleta);
+            }
+        }
     }
     
 }
