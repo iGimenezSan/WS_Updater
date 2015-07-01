@@ -1,13 +1,11 @@
  package toolbox;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 import objetos.ProductoParaImportar;
 import objetos.ProductosGlobal;
-import static toolbox.Lectores.PARAM;
 
 
 /* 
@@ -88,6 +86,7 @@ public class Procesadores {
             retorno.add(new ProductoParaImportar(valorProductID, valorModel, valorName, valorInOutStock, valorURL, valorProductPrice, valorQuantity, valorCreationDate, valorLastModification, valorDateAvailable, valorManufacturerName, valorCategoriesName, valorDescription, valorProductImage, valorCategoriesImage, valorSpecialProductPrice, valorDateSpecialPriceCreated, valorSpecialLastModified, valorSpecialExpires, valorSpecialChanged, valorSpecialStatus, valorProductAttributes, valorTaxClassName, valorProductsOrdered, valorProductsViewed, valorManufacturersImage, valorFeatureDateAdded, valorFeaturedLastModified, valorFeaturedExpiresDate, valorFeaturedDateStatusChange, valorFeaturedStatus, valorWeight, valorProducts_Images, valorAttribute1Option, valorAttribute1Value, valorAttribute1Prefix, valorAttribute1Price));
             //LECT.procesarImagenesParaDescarga(imagenesProducto);
         }
+        prepararImagenesProducto(imagenesProducto);
         return retorno;
     }
 
@@ -279,6 +278,9 @@ public class Procesadores {
     //////                       ////////
     /////////////////////////////////////    
     
+    public void prepararImagenesProducto(String[] imagenesProducto) {
+        
+    }
 
     
     ////////////////////////////////////
@@ -342,5 +344,7 @@ public class Procesadores {
         String salida = "products/" + modelo + "-" + nombre;
         return salida;
     }
+
+
 
 }
